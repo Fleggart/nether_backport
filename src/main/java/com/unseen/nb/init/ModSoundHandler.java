@@ -270,7 +270,7 @@ public class ModSoundHandler {
 
         //MISC
         SOUL_SAND_SCREAM = registerSound("soul.scream", "particle");
-        NETHERITE_EQUIP = registerSound("netherite.equip", "armor");
+        NETHERITE_EQUIP = registerSound("netherite.equip", "entity");
         PIG_STEP_DISC = registerSound("record.pigstep", "music");
 
     }

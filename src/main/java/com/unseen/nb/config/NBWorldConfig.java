@@ -9,12 +9,17 @@ public class NBWorldConfig {
     @Config.Name("Bastion Remnants Spawn Frequency")
     @Config.Comment("Change the spacing between Bastion Remnants, lower means more frequent, higher means less (Block spacing / 6 > frequency)")
     @Config.RequiresMcRestart
-    public static int bastionFrequency = 100;
+    public static int bastionFrequency = 45;
 
     @Config.Name("Bastion Remnants Enable/Disable")
     @Config.Comment("When set to false, this will disable Bastion Remnants from spawning")
     @Config.RequiresMcRestart
     public static boolean bastion_enabled = true;
+
+    @Config.Name("Bastion Remnants Locate Command Radius")
+    @Config.Comment("Change the radius in how far the locate command searches for a Bastion Remnants")
+    @Config.RequiresMcRestart
+    public static int bastion_search_radius = 70;
 
     @Config.Name("Bastion Remnants Y-level")
     @Config.Comment("Change the Y-level the Bastion Remnants spawn at, NOTE: this is the level that bridges for will spawn at")
@@ -39,10 +44,16 @@ public class NBWorldConfig {
     @Config.RequiresMcRestart
     public static int bastionHoldChestChance = 7;
 
-    @Config.Name("Bastion Remnants & Nether Portal Ruins Biomes Blacklist")
-    @Config.Comment("This list acts as a black list for the remnants & nether portal ruins to NOT spawn in, and custom lava lake spawns for Striders")
+    @Config.Name("Nether Portal Ruins Biomes Blacklist")
+    @Config.Comment("This list acts as a black list for nether portal ruins to NOT spawn in, and custom lava lake spawns for Striders")
     @Config.RequiresMcRestart
     public static String[] remnantsBiomesNotAllowed = {"nb:basalt_deltas"};
+
+    @Config.Name("Bastion Remnants Banned Biome Types")
+    @Config.Comment("Add Biome types that DISALLOW the Bastion Remnants from spawning in that biome, examples of tags are HOT, COLD, SPOOKY")
+    @Config.RequiresMcRestart
+    public static String[] biome_types_blacklist_bastion = {"MOUNTAIN"
+    };
 
     @Config.Name("Portal Ruins Overworld Spawn Rate")
     @Config.Comment("Change the rate that ruined portals in the overworld spawn at, lower means more frequent, higher means less (Block spacing > frequency)")
@@ -164,5 +175,25 @@ public class NBWorldConfig {
     @Config.Comment("Change the chance of Nether Gold Ore spawning per chunk")
     @Config.RequiresMcRestart
     public static int nether_gold_spawn_chances = 10;
+
+    @Config.Name("Warped Forest Tree Max Spawn Rate")
+    @Config.Comment("Change the rate at which trees spawn throughout the Warped Forest. Max Value")
+    @Config.RequiresMcRestart
+    public static int warped_forest_max_trees = 25;
+
+    @Config.Name("Warped Forest Tree Min Spawn Rate")
+    @Config.Comment("Change the rate at which trees spawn throughout the Warped Forest. Min Value")
+    @Config.RequiresMcRestart
+    public static int warped_forest_min_trees = 15;
+
+    @Config.Name("Crimson Forest Tree Max Spawn Rate")
+    @Config.Comment("Change the rate at which trees spawn throughout the Crimson Forest. Max Value")
+    @Config.RequiresMcRestart
+    public static int crimson_forest_max_trees = 25;
+
+    @Config.Name("Crimson Forest Tree Min Spawn Rate")
+    @Config.Comment("Change the rate at which trees spawn throughout the Crimson Forest. Min Value")
+    @Config.RequiresMcRestart
+    public static int crimson_forest_min_trees = 15;
 
 }

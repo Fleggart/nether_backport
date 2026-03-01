@@ -58,7 +58,7 @@ public class BiomeWarpedForest extends Biome implements INetherBiome, INetherAPI
     private Random random;
 
     public BiomeWarpedForest() {
-        super(properties.setRainDisabled());
+        super(properties.setRainDisabled().setTemperature(2.0F));
         this.spawnableMonsterList.clear();
         this.spawnableCreatureList.clear();
         this.spawnableWaterCreatureList.clear();
@@ -105,7 +105,7 @@ public class BiomeWarpedForest extends Biome implements INetherBiome, INetherAPI
         }
 
         //Trees
-        for(int k2 = 0; k2 < ModRand.range(15, 25); k2++) {
+        for(int k2 = 0; k2 < ModRand.range(NBWorldConfig.warped_forest_min_trees, NBWorldConfig.warped_forest_max_trees); k2++) {
             int l6 = random.nextInt(16) + 8;
             int k10 = random.nextInt(16) + 8;
             int depthSignature = 2;

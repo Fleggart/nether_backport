@@ -187,30 +187,31 @@ public class ModelPiglinZombie extends BasicModelEntity {
 	public void setRotationAngles(float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch, float scaleFactor, Entity entityIn)
 	{
 		EntityPiglinZombie pigling = ((EntityPiglinZombie) entityIn);
+		if(!entityIn.isDead) {
+			float walkSpeed = 0.5F;
+			float walkDegree = 1F;
 
-		float walkSpeed = 0.5F;
-		float walkDegree = 1F;
+			//Arms
+			if (!pigling.isMeleeAttack()) {
+				this.cube_r3.rotateAngleZ += MathHelper.cos(ageInTicks * 0.09F) * 0.05F + 0.05F;
+				this.cube_r4.rotateAngleZ -= MathHelper.cos(ageInTicks * 0.09F) * 0.05F + 0.05F;
+				this.cube_r3.rotateAngleX += MathHelper.sin(ageInTicks * 0.067F) * 0.05F;
+				this.cube_r4.rotateAngleX -= MathHelper.sin(ageInTicks * 0.067F) * 0.05F;
+			}
 
-		//Arms
-		if(!pigling.isMeleeAttack()) {
-			this.cube_r3.rotateAngleZ += MathHelper.cos(ageInTicks * 0.09F) * 0.05F + 0.05F;
-			this.cube_r4.rotateAngleZ -= MathHelper.cos(ageInTicks * 0.09F) * 0.05F + 0.05F;
-			this.cube_r3.rotateAngleX += MathHelper.sin(ageInTicks * 0.067F) * 0.05F;
-			this.cube_r4.rotateAngleX -= MathHelper.sin(ageInTicks * 0.067F) * 0.05F;
+			//Body Bobbing
+			float bodyBob = EZMath.walkValue(limbSwing, limbSwingAmount, walkSpeed * 1.2F, 0.5F, 1F, true);
+			this.Torso.rotationPointY += bodyBob;
+			//Legs Walking
+			this.walk(LegR, walkSpeed, walkDegree, true, 0F, 0.1F, limbSwing, limbSwingAmount);
+			this.walk(LegL, walkSpeed, walkDegree, false, 0F, 0.1F, limbSwing, limbSwingAmount);
+			//Ear Movements
+			this.flap(LEar, walkSpeed, walkDegree * 0.25F, true, 0F, 0.1F, limbSwing, limbSwingAmount);
+			this.flap(REar, walkSpeed, walkDegree * 0.25F, false, 0F, 0.1F, limbSwing, limbSwingAmount);
+			//Again this is for Individual components such as heads to look as they please
+			this.faceTarget(netHeadYaw, headPitch, 1, Head);
+			super.setRotationAngles(limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch, scaleFactor, entityIn);
 		}
-
-		//Body Bobbing
-		float bodyBob = EZMath.walkValue(limbSwing, limbSwingAmount, walkSpeed * 1.2F, 0.5F, 1F, true);
-		this.Torso.rotationPointY += bodyBob;
-		//Legs Walking
-		this.walk(LegR, walkSpeed, walkDegree, true, 0F, 0.1F, limbSwing, limbSwingAmount);
-		this.walk(LegL, walkSpeed, walkDegree, false, 0F, 0.1F, limbSwing, limbSwingAmount);
-		//Ear Movements
-		this.flap(LEar, walkSpeed, walkDegree * 0.25F, true, 0F, 0.1F, limbSwing, limbSwingAmount);
-		this.flap(REar, walkSpeed, walkDegree * 0.25F, false, 0F, 0.1F, limbSwing, limbSwingAmount);
-		//Again this is for Individual components such as heads to look as they please
-		this.faceTarget(netHeadYaw, headPitch, 1, Head);
-		super.setRotationAngles(limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch, scaleFactor, entityIn);
 	}
 
 	@Override

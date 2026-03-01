@@ -69,9 +69,13 @@ tile.crimson_fence.name=Crimson Fence
 tile.warped_fence.name=Warped Fence
 tile.warped_gate.name=Warped Fence Gate
 tile.crimson_gate.name=Crimson Fence Gate
+tile.piglin_head.name=Piglin Head
+tile.piglin_brute_head.name=Piglin Brute Head
+tile.piglin_zombie_head.name=Zombified Piglin Head
 
 #ENCHANTMENT
 enchantment.soul_speed=Soul Speed
+enchantment.nb.soul_speed.desc=Applied to boots and allows the player to move more quickly on Soul Sand and Soul Soil.
 
 
 ##ENTITIES

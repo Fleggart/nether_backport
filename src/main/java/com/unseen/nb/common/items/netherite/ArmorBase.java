@@ -3,6 +3,7 @@ package com.unseen.nb.common.items.netherite;
 import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
 import com.unseen.nb.Main;
+import com.unseen.nb.config.ModConfig;
 import com.unseen.nb.handler.IHasModel;
 import com.unseen.nb.init.ModItems;
 import com.unseen.nb.init.ModItemsCompat;
@@ -54,7 +55,7 @@ public class ArmorBase extends ItemArmor implements IHasModel {
             multimap.put(SharedMonsterAttributes.KNOCKBACK_RESISTANCE.getName(), this.knockbackResistance);
             // Override armor toughness to make is adjustable in game
             //Come back to Re-use when needed IF needed
-            multimap.put(SharedMonsterAttributes.ARMOR_TOUGHNESS.getName(), new AttributeModifier(ARMOR_MODIFIERS[equipmentSlot.getIndex()], "Armor toughness", 3.0F, 0));
+            multimap.put(SharedMonsterAttributes.ARMOR_TOUGHNESS.getName(), new AttributeModifier(ARMOR_MODIFIERS[equipmentSlot.getIndex()], "Armor toughness", ModConfig.nether_arnor_toughness, 0));
 
         }
 

@@ -84,7 +84,7 @@ public class BlockNetherGrass extends BlockBase implements IGrowable
                 IBlockState stateAbove = worldIn.getBlockState(pos.up());
 
             /* Decay only needs to occur if directly above this is a full non-opaque block. */
-            if(stateAbove.isFullCube())
+            if(stateAbove.isFullCube() || stateAbove.getBlock() == Blocks.LAVA)
             { worldIn.setBlockState(pos, Blocks.NETHERRACK.getDefaultState()); }
         }
     }

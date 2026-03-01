@@ -3,6 +3,7 @@ package com.unseen.nb;
 import com.sun.jna.Structure;
 import com.unseen.nb.common.blocks.tileentity.TilePiglinHead;
 import com.unseen.nb.common.capabilities.CapabilityRespawnAnchor;
+import com.unseen.nb.common.commands.CommandLocateBastion;
 import com.unseen.nb.common.world.WorldGenNetherStructures;
 import com.unseen.nb.common.world.ore.NBOreGen;
 import com.unseen.nb.handler.StructureHandler;
@@ -22,6 +23,7 @@ import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLServerStartingEvent;
 import net.minecraftforge.fml.common.network.simpleimpl.IMessage;
 import net.minecraftforge.fml.common.network.simpleimpl.SimpleNetworkWrapper;
 import net.minecraftforge.fml.common.registry.GameRegistry;
@@ -84,6 +86,12 @@ public class Main {
 
     }
 
+    @Mod.EventHandler
+    public void serverLoad(FMLServerStartingEvent event)
+    {
+        // register server commands
+        event.registerServerCommand(new CommandLocateBastion());
+    }
 
 
     public static <MSG extends IMessage> void sendMSGToAll(MSG message) {

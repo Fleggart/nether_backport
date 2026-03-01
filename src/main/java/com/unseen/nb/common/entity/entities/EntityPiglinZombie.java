@@ -15,10 +15,7 @@ import com.unseen.nb.util.ModRand;
 import com.unseen.nb.util.ModReference;
 import com.unseen.nb.util.ModUtils;
 import net.minecraft.block.Block;
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.EntityCreature;
-import net.minecraft.entity.EntityLivingBase;
-import net.minecraft.entity.SharedMonsterAttributes;
+import net.minecraft.entity.*;
 import net.minecraft.entity.ai.*;
 import net.minecraft.entity.ai.attributes.AttributeModifier;
 import net.minecraft.entity.ai.attributes.IAttributeInstance;
@@ -205,12 +202,18 @@ public class EntityPiglinZombie extends EntityNetherBase implements IAnimatedEnt
     }
 
     @Override
+    public EnumCreatureAttribute getCreatureAttribute()
+    {
+        return EnumCreatureAttribute.UNDEAD;
+    }
+
+    @Override
     public int startAttack(EntityLivingBase target, float distanceSq, boolean strafingBackwards) {
         double distance = Math.sqrt(distanceSq);
         if(!this.isFightMode()) {
             List<Consumer<EntityLivingBase>> attacks = new ArrayList<>(Arrays.asList(meleeAttack, meleeAttackTwo));
             double[] weights = {
-                    (distance < 3) ? 1 / distance : 1,
+                    (distance < 3) ? 1 / distance + 0.001 : 1,
                     (distance < 3) ? 1 / distance : 2
             };
             prevAttack = ModRand.choice(attacks, rand, weights).next();

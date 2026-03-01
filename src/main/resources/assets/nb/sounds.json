@@ -2700,8 +2700,8 @@
       }
     ]
   },
-  "armor.netherite.equip": {
-    "category": "armor",
+  "entity.netherite.equip": {
+    "category": "entity",
     "sounds": [
       {
         "name": "nb:misc/armor/equip_netherite1",

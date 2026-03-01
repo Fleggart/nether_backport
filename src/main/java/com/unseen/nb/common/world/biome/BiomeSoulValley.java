@@ -70,7 +70,7 @@ public class BiomeSoulValley extends Biome implements INetherBiome, INetherAPIRe
     public int particleRate = NBWorldConfig.soulSandValleyparticleRate;
 
     public BiomeSoulValley() {
-        super(properties.setRainDisabled());
+        super(properties.setRainDisabled().setTemperature(2.0F));
         this.spawnableMonsterList.clear();
         this.spawnableCreatureList.clear();
         this.spawnableWaterCreatureList.clear();

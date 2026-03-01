@@ -63,12 +63,13 @@ public class WorldGenNetherStructures implements IWorldGenerator {
             //This is the connect between the bastion spawn rules and a signal to tell it to try it here
             //WorldGenBastion handles the actual spawn rules
 
-            if(world.provider.getBiomeForCoords(pos) != getSpawnBiomesRemnarts().iterator()) {
+
                 //Bastion Remnants
                 if(NBWorldConfig.bastion_enabled) {
                     bastion.generate(world, random, pos);
                 }
 
+                if(world.provider.getBiomeForCoords(pos) != getSpawnBiomesRemnarts().iterator()) {
                 //Custom STrider Spawns
                 if(!NBEntitiesConfig.disabledCustomSpawns) {
                     strider_spawns.generate(world, random, pos);
@@ -97,7 +98,7 @@ public class WorldGenNetherStructures implements IWorldGenerator {
                 int y = getGroundFromAbove(world, pos.getX(), pos.getZ());
                 //generates regular ruined portals
                 BlockPos posModified = new BlockPos(pos.getX(), y, pos.getZ());
-                if (y != 0 && !world.isAirBlock(posModified.add(3, -1, 3)) && !world.isAirBlock(posModified.add(3, -1, 3))) {
+                if (y != 0 && !world.isAirBlock(pos) && !world.isAirBlock(posModified.add(3, -1, 3))) {
                     //Hopefully this fixes the issue with repeating portals
 
                         //Giant Portal Ruins 5% chance of spawning

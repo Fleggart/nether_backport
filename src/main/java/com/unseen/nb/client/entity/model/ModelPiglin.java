@@ -249,36 +249,37 @@ public class ModelPiglin extends BasicModelEntity {
 	public void setRotationAngles(float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch, float scaleFactor, Entity entityIn)
 	{
 		EntityPiglin pigling = ((EntityPiglin) entityIn);
+		if(!entityIn.isDead) {
+			float walkSpeed = 0.5F;
+			float walkDegree = 1F;
+			float f = 1.0F;
 
-		float walkSpeed = 0.5F;
-		float walkDegree = 1F;
-		float f = 1.0F;
+			//Arm Movements
+			if (pigling.isLoadedACrossBow()) {
+				//animator.rotate(LArm, (float) Math.toRadians(-80),(float) Math.toRadians(30),0);
+				//animator.rotate(RArm, (float) Math.toRadians(-80), (float) Math.toRadians(-20), 0);
+				RArm.rotateAngleX = (-(float) Math.PI / 2F) + Head.rotateAngleX + 0.1F;
+				RArm.rotateAngleY = -0.3F + Head.rotateAngleY;
+				LArm.rotateAngleX = -1.5F + Head.rotateAngleX;
+				LArm.rotateAngleY = 0.6F + Head.rotateAngleY;
 
-		//Arm Movements
-		if(pigling.isLoadedACrossBow()) {
-			//animator.rotate(LArm, (float) Math.toRadians(-80),(float) Math.toRadians(30),0);
-			//animator.rotate(RArm, (float) Math.toRadians(-80), (float) Math.toRadians(-20), 0);
-			RArm.rotateAngleX = (-(float)Math.PI / 2F) + Head.rotateAngleX + 0.1F;
-			RArm.rotateAngleY = -0.3F + Head.rotateAngleY;
-			LArm.rotateAngleX = -1.5F + Head.rotateAngleX;
-			LArm.rotateAngleY = 0.6F + Head.rotateAngleY;
-
-		} else if(!pigling.isMeleeAttack() && !pigling.isRangedAttack() && !pigling.isLoadedACrossBow()) {
-			this.walk(RArm, walkSpeed, walkDegree, true, 0F, 0.1F, limbSwing, limbSwingAmount);
-			this.walk(LArm, walkSpeed, walkDegree, false, 0F, 0.1F, limbSwing, limbSwingAmount);
+			} else if (!pigling.isMeleeAttack() && !pigling.isRangedAttack() && !pigling.isLoadedACrossBow()) {
+				this.walk(RArm, walkSpeed, walkDegree, true, 0F, 0.1F, limbSwing, limbSwingAmount);
+				this.walk(LArm, walkSpeed, walkDegree, false, 0F, 0.1F, limbSwing, limbSwingAmount);
+			}
+			//Body Bobbing
+			float bodyBob = EZMath.walkValue(limbSwing, limbSwingAmount, walkSpeed * 1.2F, 0.5F, 1F, true);
+			this.Torso.rotationPointY += bodyBob;
+			//Legs Walking
+			this.walk(LegR, walkSpeed, walkDegree, true, 0F, 0.1F, limbSwing, limbSwingAmount);
+			this.walk(LegL, walkSpeed, walkDegree, false, 0F, 0.1F, limbSwing, limbSwingAmount);
+			//Ear Movements
+			this.flap(LEar, walkSpeed, walkDegree * 0.25F, true, 0F, 0.1F, limbSwing, limbSwingAmount);
+			this.flap(REar, walkSpeed, walkDegree * 0.25F, false, 0F, 0.1F, limbSwing, limbSwingAmount);
+			//Again this is for Individual components such as heads to look as they please
+			this.faceTarget(netHeadYaw, headPitch, 1, Head);
+			super.setRotationAngles(limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch, scaleFactor, entityIn);
 		}
-		//Body Bobbing
-		float bodyBob = EZMath.walkValue(limbSwing, limbSwingAmount, walkSpeed * 1.2F, 0.5F, 1F, true);
-		this.Torso.rotationPointY += bodyBob;
-		//Legs Walking
-		this.walk(LegR, walkSpeed, walkDegree, true, 0F, 0.1F, limbSwing, limbSwingAmount);
-		this.walk(LegL, walkSpeed, walkDegree, false, 0F, 0.1F, limbSwing, limbSwingAmount);
-		//Ear Movements
-		this.flap(LEar, walkSpeed, walkDegree * 0.25F, true, 0F, 0.1F, limbSwing, limbSwingAmount);
-		this.flap(REar, walkSpeed, walkDegree * 0.25F, false, 0F, 0.1F, limbSwing, limbSwingAmount);
-		//Again this is for Individual components such as heads to look as they please
-		this.faceTarget(netHeadYaw, headPitch, 1, Head);
-		super.setRotationAngles(limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch, scaleFactor, entityIn);
 
 	}
 	@Override

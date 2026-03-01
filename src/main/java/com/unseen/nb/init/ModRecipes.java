@@ -1,5 +1,6 @@
 package com.unseen.nb.init;
 
+import com.unseen.nb.util.integration.ModIntegration;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
@@ -21,19 +22,19 @@ public class ModRecipes {
                 //Wood
                 OreDictionary.registerOre("logWood", ModBlocks.CRIMSON_STEM);
                 OreDictionary.registerOre("logWood", ModBlocks.WARPED_STEM);
-                OreDictionary.registerOre("plankWood", new ItemStack(ModBlocks.CRIMSON_PLANKS, 1, 0));
-                OreDictionary.registerOre("plankWood", new ItemStack(ModBlocks.WARPED_PLANKS, 1,0));
+                OreDictionary.registerOre("plankWood",ModBlocks.CRIMSON_PLANKS);
+                OreDictionary.registerOre("plankWood",ModBlocks.WARPED_PLANKS);
                 OreDictionary.registerOre("stairWood", ModBlocks.CRIMSON_STAIRS);
                 OreDictionary.registerOre("stairWood", ModBlocks.WARPED_STAIRS);
 
-                OreDictionary.registerOre("trapDoor", ModBlocks.CRIMSON_TRAPDOOR);
-                OreDictionary.registerOre("trapDoor", ModBlocks.WARPED_TRAPDOOR);
-                OreDictionary.registerOre("trapDoor", Blocks.TRAPDOOR);
+              //  OreDictionary.registerOre("trapDoor", ModBlocks.CRIMSON_TRAPDOOR);
+              //  OreDictionary.registerOre("trapDoor", ModBlocks.WARPED_TRAPDOOR);
 
                 //Material
-                OreDictionary.registerOre("ingotNetherite", ModItemsCompat.NETHERITE_INGOT);
-                OreDictionary.registerOre("blockNetherite", ModBlocksCompat.NETHERITE_BLOCK);
-
+                if(!ModIntegration.FUTURE_MC_LOADED) {
+                        OreDictionary.registerOre("ingotNetherite", ModItemsCompat.NETHERITE_INGOT);
+                        OreDictionary.registerOre("blockNetherite", ModBlocksCompat.NETHERITE_BLOCK);
+                }
 
         }
 

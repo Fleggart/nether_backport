@@ -57,7 +57,7 @@ public class BiomeBasaltWastes extends Biome implements INetherBiome, INetherAPI
     private Random random;
     /**WIP*/
     public BiomeBasaltWastes() {
-        super(properties.setRainDisabled());
+        super(properties.setRainDisabled().setTemperature(2.0F));
         this.spawnableMonsterList.clear();
         this.spawnableCreatureList.clear();
         this.spawnableWaterCreatureList.clear();
@@ -147,7 +147,9 @@ public class BiomeBasaltWastes extends Biome implements INetherBiome, INetherAPI
                         primer.setBlockState(x, y, z, topBlock);
                         //Builds random
                         for(int i = y; i <= y + chunkGenerator.getRand().nextInt(10); i++) {
-                            primer.setBlockState(x, i, z, topBlock);
+                            if(primer.getBlockState(x, i, z).getBlock() != Blocks.BEDROCK) {
+                                primer.setBlockState(x, i, z, topBlock);
+                            }
                         }
                         currDepth = 15 + chunkGenerator.getRand().nextInt(5);
                 }
@@ -182,7 +184,7 @@ public class BiomeBasaltWastes extends Biome implements INetherBiome, INetherAPI
            int l6 = random.nextInt(16) + 8;
             int k10 = random.nextInt(16) + 8;
             int depthSignature = 2;
-            for(int y = NetherAPIConfig.tallNether ? 240 : 110; y > 32; y--) {
+            for(int y = NetherAPIConfig.tallNether ? 230 : 105; y > 32; y--) {
                 IBlockState currentBlock = chunkGenerator.getWorld().getBlockState(pos.add(l6, y, k10));
                 if(depthSignature == 1) {
                     lava.generate(chunkGenerator.getWorld(), chunkGenerator.getRand(), pos.add(l6, y + 1, k10));

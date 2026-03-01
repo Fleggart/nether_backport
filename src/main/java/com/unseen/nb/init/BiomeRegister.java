@@ -18,11 +18,11 @@ public class BiomeRegister {
     public static final Biome SOUL_SAND_VALLEY = new BiomeSoulValley();
     public static final Biome BASALT_DELTAS = new BiomeBasaltWastes();
     public static void registerBiomes() {
-        initBiome(CRIMSON_FOREST, "crimson_forest", Type.NETHER);
-        initBiome(WARPED_FOREST, "warped_forest", Type.NETHER);
-        initBiome(SOUL_SAND_VALLEY, "soul_sand_valley", Type.NETHER);
+        initBiome(CRIMSON_FOREST, "crimson_forest", Type.NETHER, Type.HOT);
+        initBiome(WARPED_FOREST, "warped_forest", Type.NETHER, Type.HOT);
+        initBiome(SOUL_SAND_VALLEY, "soul_sand_valley", Type.NETHER, Type.DRY, Type.HOT);
         if(!ModConfig.disableBasaltDeltas) {
-            initBiome(BASALT_DELTAS, "basalt_deltas", Type.NETHER);
+            initBiome(BASALT_DELTAS, "basalt_deltas", Type.NETHER, Type.MOUNTAIN, Type.HOT);
         }
     }
 

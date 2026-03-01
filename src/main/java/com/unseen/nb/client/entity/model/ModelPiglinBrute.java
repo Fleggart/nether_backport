@@ -174,29 +174,31 @@ public class ModelPiglinBrute extends BasicModelEntity {
 	@Override
 	public void setRotationAngles(float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch, float scaleFactor, Entity entityIn)
 	{
-		EntityPiglinBrute pigling = ((EntityPiglinBrute) entityIn);
+		if(!entityIn.isDead) {
+			EntityPiglinBrute pigling = ((EntityPiglinBrute) entityIn);
 
-		float walkSpeed = 0.5F;
-		float walkDegree = 1F;
+			float walkSpeed = 0.5F;
+			float walkDegree = 1F;
 
-		//Arms
-		if(!pigling.isMeleeAttack()) {
-			this.walk(RArm, walkSpeed, walkDegree, true, 0F, 0.1F, limbSwing, limbSwingAmount);
-			this.walk(LArm, walkSpeed, walkDegree, false, 0F, 0.1F, limbSwing, limbSwingAmount);
+			//Arms
+			if (!pigling.isMeleeAttack()) {
+				this.walk(RArm, walkSpeed, walkDegree, true, 0F, 0.1F, limbSwing, limbSwingAmount);
+				this.walk(LArm, walkSpeed, walkDegree, false, 0F, 0.1F, limbSwing, limbSwingAmount);
+			}
+
+			//Body Bobbing
+			float bodyBob = EZMath.walkValue(limbSwing, limbSwingAmount, walkSpeed * 1.2F, 0.5F, 1F, true);
+			this.Torso.rotationPointY += bodyBob;
+			//Legs Walking
+			this.walk(LegR, walkSpeed, walkDegree, true, 0F, 0.1F, limbSwing, limbSwingAmount);
+			this.walk(LegL, walkSpeed, walkDegree, false, 0F, 0.1F, limbSwing, limbSwingAmount);
+			//Ear Movements
+			this.flap(LEar, walkSpeed, walkDegree * 0.25F, true, 0F, 0.1F, limbSwing, limbSwingAmount);
+			this.flap(REar, walkSpeed, walkDegree * 0.25F, false, 0F, 0.1F, limbSwing, limbSwingAmount);
+			//Again this is for Individual components such as heads to look as they please
+			this.faceTarget(netHeadYaw, headPitch, 1, Head);
+			super.setRotationAngles(limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch, scaleFactor, entityIn);
 		}
-
-		//Body Bobbing
-		float bodyBob = EZMath.walkValue(limbSwing, limbSwingAmount, walkSpeed * 1.2F, 0.5F, 1F, true);
-		this.Torso.rotationPointY += bodyBob;
-		//Legs Walking
-		this.walk(LegR, walkSpeed, walkDegree, true, 0F, 0.1F, limbSwing, limbSwingAmount);
-		this.walk(LegL, walkSpeed, walkDegree, false, 0F, 0.1F, limbSwing, limbSwingAmount);
-		//Ear Movements
-		this.flap(LEar, walkSpeed, walkDegree * 0.25F, true, 0F, 0.1F, limbSwing, limbSwingAmount);
-		this.flap(REar, walkSpeed, walkDegree * 0.25F, false, 0F, 0.1F, limbSwing, limbSwingAmount);
-		//Again this is for Individual components such as heads to look as they please
-		this.faceTarget(netHeadYaw, headPitch, 1, Head);
-		super.setRotationAngles(limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch, scaleFactor, entityIn);
 	}
 
 	@Override
