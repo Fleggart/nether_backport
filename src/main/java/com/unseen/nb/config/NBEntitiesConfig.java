@@ -113,26 +113,6 @@ public class NBEntitiesConfig {
     @Config.RequiresMcRestart
     public static float zombie_piglin_attack_damange = 8;
 
-    @Config.Name("Zoglin Health")
-    @Config.Comment("Change the Health of the Zoglin")
-    @Config.RequiresMcRestart
-    public static double zoglin_health = 40;
-
-    @Config.Name("Zoglin Armor")
-    @Config.Comment("Change the Armor of the Zoglin")
-    @Config.RequiresMcRestart
-    public static double zoglin_armor = 0;
-
-    @Config.Name("Zoglin Armor Toughness")
-    @Config.Comment("Change the Armor Toughness of the Zoglin")
-    @Config.RequiresMcRestart
-    public static double zoglin_armor_toughness = 0;
-
-    @Config.Name("Zoglin Attack Damage")
-    @Config.Comment("Change the Attack Damage of the Zoglin")
-    @Config.RequiresMcRestart
-    public static float zoglin_attack_damange = 8;
-
     @Config.Name("Strider Health")
     @Config.Comment("Change the Health of the Strider")
     @Config.RequiresMcRestart
