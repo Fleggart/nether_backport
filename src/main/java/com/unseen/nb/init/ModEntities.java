@@ -43,8 +43,6 @@ public class ModEntities {
         registerEntityWithID("piglin_zombie", EntityPiglinZombie.class, ENTITY_START_ID++, 70, piglin_zombie);
         //Hoglin
         registerEntityWithID("hoglin", EntityHoglin.class, ENTITY_START_ID++, 70, hoglin);
-        //Zoglin
-        registerEntityWithID("zoglin", EntityZoglin.class, ENTITY_START_ID++, 70, zoglin);
         //Fire Proof Item
         registerEntity("fire_proof_item", EntityFireProofItem.class, ENTITY_START_ID++, 50);
     }
