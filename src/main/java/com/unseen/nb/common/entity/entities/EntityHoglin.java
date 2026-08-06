@@ -156,24 +156,6 @@ public class EntityHoglin extends EntityNetherAnimalBase implements IAttack, IAn
         return this.temptationAI != null && this.temptationAI.isRunning();
     }
 
-    private void beginZombieTransformation() {
-        if(!world.isRemote) {
-            addEvent(() -> this.playSound(ModSoundHandler.HOGLIN_CONVERTED, 1.0f, 0.8f), 75);
-            addEvent(() -> {
-                EntityZoglin zombie = new EntityZoglin(world);
-                zombie.copyLocationAndAnglesFrom(this);
-                if(this.isChild()) {
-                    zombie.setGrowingAge(-24000);
-                }
-                zombie.setPosition(this.posX, this.posY, this.posZ);
-                zombie.addPotionEffect(new PotionEffect(MobEffects.NAUSEA, 200, 1));
-                this.setDead();
-                this.world.spawnEntity(zombie);
-            }, 100);
-        }
-    }
-
-
     @Override
     protected void applyEntityAttributes() {
         super.applyEntityAttributes();
