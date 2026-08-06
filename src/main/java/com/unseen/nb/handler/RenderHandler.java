@@ -33,9 +33,7 @@ public class RenderHandler {
         RenderingRegistry.registerEntityRenderingHandler(EntityPiglinZombie.class, RenderPiglinZombie::new);
         //Hoglin
         RenderingRegistry.registerEntityRenderingHandler(EntityHoglin.class, RenderHoglin::new);
-        //Zoglin
-        RenderingRegistry.registerEntityRenderingHandler(EntityZoglin.class, RenderZoglin::new);
-
+        
         ClientRegistry.bindTileEntitySpecialRenderer(TilePiglinHead.class, new RenderPiglinHead());
     }
 
