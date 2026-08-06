@@ -136,7 +136,6 @@ public class EntityHoglin extends EntityNetherAnimalBase implements IAttack, IAn
                     this.setAttackTarget(null);
                     this.setImmovable(true);
                     this.convertTooZombie = true;
-                    this.beginZombieTransformation();
                 } else {
                     countDownToZombie--;
                 }
