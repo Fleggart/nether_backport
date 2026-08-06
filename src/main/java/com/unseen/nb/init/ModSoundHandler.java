@@ -122,13 +122,6 @@ public class ModSoundHandler {
     public static SoundEvent HOGLIN_IDLE;
     public static SoundEvent HOGLIN_CONVERTED;
     public static SoundEvent HOGLIN_ATTACK;
-    //Zoglin
-    public static SoundEvent ZOGLIN_IDLE;
-    public static SoundEvent ZOGLIN_HURT;
-    public static SoundEvent ZOGLIN_DEATH;
-    public static SoundEvent ZOGLIN_ANGRY;
-    public static SoundEvent ZOGLIN_STEP;
-    public static SoundEvent ZOGLIN_ATTACK;
 
     //Biome Ambience
     public static SoundEvent CRIMSON_FOREST_AMBIENT;
@@ -251,13 +244,7 @@ public class ModSoundHandler {
         HOGLIN_RETREAT = registerSound("hoglin.retreat", "entity"); //DONE
         HOGLIN_ATTACK = registerSound("hoglin.attack", "entity"); //DONE
         HOGLIN_CONVERTED = registerSound("hoglin.converted", "entity"); //DONE
-        //ZOGLIN
-        ZOGLIN_ANGRY = registerSound("zoglin.angry", "entity");
-        ZOGLIN_DEATH = registerSound("zoglin.death", "entity");
-        ZOGLIN_HURT = registerSound("zoglin.hurt", "entity");
-        ZOGLIN_IDLE = registerSound("zoglin.idle", "entity");
-        ZOGLIN_STEP = registerSound("zoglin.step", "entity");
-        ZOGLIN_ATTACK = registerSound("zoglin.attack", "entity");
+        
         //Biome Ambience
         CRIMSON_FOREST_AMBIENT = registerSound("crimson_forest.ambience", "ambient");
         CRIMSON_FOREST_AMBIENT_CONSTANT = registerSound("crimson_forest.constant", "ambient");
