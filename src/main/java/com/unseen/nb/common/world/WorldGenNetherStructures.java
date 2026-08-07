@@ -47,8 +47,6 @@ public class WorldGenNetherStructures implements IWorldGenerator {
             new WorldGenNetherPortal("nether_portal_3"),new WorldGenNetherPortal("nether_portal_4"),new WorldGenNetherPortal("nether_portal_5"),
             new WorldGenNetherPortal("nether_portal_6"),new WorldGenNetherPortal("nether_portal_7")};
 
-    private static final WorldGenStriderSpawn strider_spawns = new WorldGenStriderSpawn("strider_spawn");
-
     private int portalSpacing = 0;
     private int netherPortalSpacing = 0;
 
