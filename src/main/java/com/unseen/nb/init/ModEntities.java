@@ -34,10 +34,8 @@ public class ModEntities {
 
     public static void registerEntities() {
         //Piglin
-    registerEntityWithID("piglin", EntityPiglin.class, ENTITY_START_ID++, 70, piglin);
-    //Strider
-    registerEntityWithID("strider", EntityStrider.class, ENTITY_START_ID++, 70, strider);
-    //Piglin Brute
+        registerEntityWithID("piglin", EntityPiglin.class, ENTITY_START_ID++, 70, piglin);
+        //Piglin Brute
         registerEntityWithID("piglin_brute", EntityPiglinBrute.class, ENTITY_START_ID++, 70, piglin_brute);
         //Piglin Zombie
         registerEntityWithID("piglin_zombie", EntityPiglinZombie.class, ENTITY_START_ID++, 70, piglin_zombie);
