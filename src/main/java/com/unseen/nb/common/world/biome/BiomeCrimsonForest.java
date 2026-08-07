@@ -5,7 +5,6 @@ import com.unseen.nb.client.particles.ParticlePixel;
 import com.unseen.nb.common.entity.entities.EntityHoglin;
 import com.unseen.nb.common.entity.entities.EntityPiglin;
 import com.unseen.nb.common.entity.entities.EntityPiglinZombie;
-import com.unseen.nb.common.entity.entities.EntityStrider;
 import com.unseen.nb.common.world.base.WorldGenNB;
 import com.unseen.nb.common.world.terrain.plants.WorldGenCrimsonPlant;
 import com.unseen.nb.common.world.terrain.plants.WorldGenCrimsonVines;
@@ -63,7 +62,6 @@ public class BiomeCrimsonForest extends Biome implements INetherBiome, INetherAP
         this.spawnableCaveCreatureList.clear();
         this.spawnableMonsterList.add(new SpawnListEntry(EntityPiglin.class, 20, 2, 4));
         this.spawnableMonsterList.add(new SpawnListEntry(EntityPiglinZombie.class, 4, 2,4));
-        this.spawnableCreatureList.add(new SpawnListEntry(EntityStrider.class, 20, 1, 2));
         this.spawnableCreatureList.add(new SpawnListEntry(EntityHoglin.class, 40, 3, 4));
         this.topBlock = CRIMSON_FLOOR;
         random = new Random();
