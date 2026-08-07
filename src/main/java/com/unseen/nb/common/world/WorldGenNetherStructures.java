@@ -5,7 +5,6 @@ import com.unseen.nb.common.world.bastion.WorldGenBastion;
 import com.unseen.nb.common.world.structures.WorldGenNetherPortal;
 import com.unseen.nb.common.world.structures.WorldGenRuinedPortals;
 import com.unseen.nb.common.world.structures.WorldGenRuinedPortalsGiant;
-import com.unseen.nb.common.world.structures.WorldGenStriderSpawn;
 import com.unseen.nb.config.ModConfig;
 import com.unseen.nb.config.NBEntitiesConfig;
 import com.unseen.nb.config.NBWorldConfig;
