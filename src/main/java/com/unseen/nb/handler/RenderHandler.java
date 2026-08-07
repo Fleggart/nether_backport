@@ -25,8 +25,6 @@ public class RenderHandler {
     public static void registerEntityRenderers() {
         //Piglin
     RenderingRegistry.registerEntityRenderingHandler(EntityPiglin.class, RenderPiglin::new);
-    //Strider
-    RenderingRegistry.registerEntityRenderingHandler(EntityStrider.class, RenderStrider::new);
     //Piglin Brute
         RenderingRegistry.registerEntityRenderingHandler(EntityPiglinBrute.class, RenderPiglinBrute::new);
         //Piglin Zombie
