@@ -69,10 +69,7 @@ public class WorldGenNetherStructures implements IWorldGenerator {
 
                 if(world.provider.getBiomeForCoords(pos) != getSpawnBiomesRemnarts().iterator()) {
                 //Custom STrider Spawns
-                if(!NBEntitiesConfig.disabledCustomSpawns) {
-                    strider_spawns.generate(world, random, pos);
-                }
-
+                
                 //Nether Portal Ruins
                 if(NBWorldConfig.nether_ruined_portal_enabled) {
                     if (netherPortalSpacing > NBWorldConfig.nether_ruins_rate) {
