@@ -30,7 +30,6 @@ public class ModEntities {
     public static Vec3i hoglin = new Vec3i(0xC66E55, 0x5F6464, 0);
     public static Vec3i zoglin = new Vec3i(0xC66E55, 0xE6E6E6, 0);
     public static Vec3i piglin_zombie = new Vec3i(0xEA9393, 0x4C7129, 0);
-    public static Vec3i strider = new Vec3i(0x9C3436, 0x4D494D, 0);
 
     public static void registerEntities() {
         //Piglin
@@ -47,9 +46,7 @@ public class ModEntities {
 
     public static void RegisterEntitySpawns() {
     spawnRateBiomeSpecific(EntityPiglin.class, EnumCreatureType.MONSTER, 15, 2, 4, Biomes.HELL);
-    spawnRateBiomeSpecific(EntityStrider.class, EnumCreatureType.CREATURE, 60, 1, 2, Biomes.HELL);
     spawnRateBiomeSpecific(EntityPiglinZombie.class, EnumCreatureType.MONSTER, 50, 2, 4, Biomes.HELL);
-    //spawnRateBiomeSpecific(EntityHoglin.class, EnumCreatureType.CREATURE, 60, 3, 4, BiomeRegister.CRIMSON_FOREST);
 
     }
 
