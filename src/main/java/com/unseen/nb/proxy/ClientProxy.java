@@ -19,10 +19,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class ClientProxy extends CommonProxy{
 
-    public void init() {
-        //Render Handler for Entities
-        RenderHandler.registerEntityRenderers();
-    }
+    
 
     @Override
     public void registerItemRenderer(Item item, int meta, String id)
@@ -32,23 +29,6 @@ public class ClientProxy extends CommonProxy{
     public void registerItemRenderer(Item item, int meta, String id, ResourceLocation resourceOverride)
     { ModelLoader.setCustomModelResourceLocation(item, meta, new ModelResourceLocation(resourceOverride, id)); }
 
-
-
-    @Override
-    public void handleAnimationPacket(int entityId, int index) {
-        EntityPlayerSP player = Minecraft.getMinecraft().player;
-        if (player != null) {
-            IAnimatedEntity entity = (IAnimatedEntity) player.world.getEntityByID(entityId);
-            if (entity != null) {
-                if (index == -1) {
-                    entity.setAnimation(IAnimatedEntity.NO_ANIMATION);
-                } else {
-                    entity.setAnimation(entity.getAnimations()[index]);
-                }
-                entity.setAnimationTick(0);
-            }
-        }
-    }
 
     @Override
     public void spawnParticle(int particle, double posX, double posY, double posZ, double speedX, double speedY, double speedZ, int... parameters)
