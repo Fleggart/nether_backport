@@ -75,7 +75,7 @@ public class Main {
         ModNetworkPackets.registerNetworkPackets();
         CapabilityManager.INSTANCE.register(CapabilityRespawnAnchor.ICapabilityRespawnAnchor.class, new CapabilityRespawnAnchor.Storage(), CapabilityRespawnAnchor.RespawnAnchorMethods::new);
         //Furnace Anvil Recipes
-        ModRecipes.init();
+        
         //Registers the Structures and Templates
         
     }
