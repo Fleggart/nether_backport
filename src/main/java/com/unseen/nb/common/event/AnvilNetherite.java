@@ -27,24 +27,7 @@ public class AnvilNetherite {
         ItemStack output = event.getOutput();
 
         if (isOreMatching(rightInput, "ingotNetherite")) {
-            if (!ModIntegration.FUTURE_MC_LOADED) {
-                Item[] diamondTools = new Item[]{Items.DIAMOND_SWORD, Items.DIAMOND_SHOVEL, Items.DIAMOND_PICKAXE, Items.DIAMOND_AXE, Items.DIAMOND_HOE, Items.DIAMOND_HELMET, Items.DIAMOND_CHESTPLATE, Items.DIAMOND_LEGGINGS, Items.DIAMOND_BOOTS, Items.DIAMOND_HORSE_ARMOR};
-
-                for (int i = 0; i < diamondTools.length; i++) {
-                    if (leftInput.getItem() == diamondTools[i]) {
-                        Item[] netheriteTools = new Item[]{ModItemsCompat.NETHERITE_SWORD, ModItemsCompat.NETHERITE_SHOVEL, ModItemsCompat.NETHERITE_PICKAXE, ModItemsCompat.NETHERITE_AXE, ModItemsCompat.NETHERITE_HOE, ModItemsCompat.NETHERITE_HELMET, ModItemsCompat.NETHERITE_CHESTPLATE, ModItemsCompat.NETHERITE_LEGGINGS, ModItemsCompat.NETHERITE_BOOTS, ModItems.NETHERITE_HORSE_ARMOR_ITEM};
-                        output = new ItemStack(netheriteTools[i]);
-                        NBTTagCompound tags = leftInput.getTagCompound();
-                        output.setTagCompound(tags);
-                        int itemDamage = (int) ModUtils.getPercentageOf(leftInput.getMaxDamage(), leftInput.getItemDamage());
-                        int calculatedDamage = (int) ModUtils.calculateValueWithPrecentage(output.getMaxDamage(), itemDamage);
-                        output.setItemDamage(calculatedDamage);
-                        event.setOutput(output);
-                        event.setMaterialCost(1);
-                        event.setCost(8);
-                    }
-                }
-            } else {
+      else {
                 Item[] diamondTools = new Item[]{Items.DIAMOND_HORSE_ARMOR};
 
                 for (int i = 0; i < diamondTools.length; i++) {
