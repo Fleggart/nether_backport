@@ -4,8 +4,8 @@ import com.sun.jna.Structure;
 import com.unseen.nb.common.blocks.tileentity.TilePiglinHead;
 import com.unseen.nb.common.capabilities.CapabilityRespawnAnchor;
 import com.unseen.nb.common.commands.CommandLocateBastion;
-import com.unseen.nb.common.world.WorldGenNetherStructures;
-import com.unseen.nb.common.world.ore.NBOreGen;
+
+
 import com.unseen.nb.handler.StructureHandler;
 import com.unseen.nb.init.*;
 import com.unseen.nb.proxy.CommonProxy;
@@ -62,9 +62,9 @@ public class Main {
         //Mod Integration for Crossbows
         ModIntegration.init();
         //Register World Gen
-        GameRegistry.registerWorldGenerator(new NBOreGen(), 1);
+        
         //Register Bastion Spawning
-        GameRegistry.registerWorldGenerator(new WorldGenNetherStructures(), 1);
+        
         //Loot Table Functions Extension
         LootFunctionManager.registerFunction(new LootTableExtendedFunc.Serializer());
     }
