@@ -26,27 +26,7 @@ public class AnvilNetherite {
         ItemStack rightInput = event.getRight();
         ItemStack output = event.getOutput();
 
-        if (isOreMatching(rightInput, "ingotNetherite")) {
-      else {
-                Item[] diamondTools = new Item[]{Items.DIAMOND_HORSE_ARMOR};
 
-                for (int i = 0; i < diamondTools.length; i++) {
-                    if (leftInput.getItem() == diamondTools[i]) {
-                        Item[] netheriteTools = new Item[]{ModItems.NETHERITE_HORSE_ARMOR_ITEM};
-                        output = new ItemStack(netheriteTools[i]);
-                        NBTTagCompound tags = leftInput.getTagCompound();
-                        output.setTagCompound(tags);
-                        int itemDamage = (int) ModUtils.getPercentageOf(leftInput.getMaxDamage(), leftInput.getItemDamage());
-                        int calculatedDamage = (int) ModUtils.calculateValueWithPrecentage(output.getMaxDamage(), itemDamage);
-                        output.setItemDamage(calculatedDamage);
-                        event.setOutput(output);
-                        event.setMaterialCost(1);
-                        event.setCost(8);
-                    }
-                }
-            }
-
-        }
         }
     }
 
