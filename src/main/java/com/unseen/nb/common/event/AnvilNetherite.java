@@ -5,7 +5,6 @@ import com.unseen.nb.init.ModItems;
 import com.unseen.nb.init.ModItemsCompat;
 import com.unseen.nb.util.ModReference;
 import com.unseen.nb.util.ModUtils;
-import com.unseen.nb.util.integration.ModIntegration;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
