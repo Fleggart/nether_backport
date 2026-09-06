@@ -53,13 +53,13 @@ public class Main {
         //Registers Sounds
         ModSoundHandler.registerSounds();
         //Registers Entities
-        ModEntities.registerEntities();
+        
         //Piglin Head
         GameRegistry.registerTileEntity(TilePiglinHead.class, new ResourceLocation(ModReference.MOD_ID, "piglin_skull"));
         //Registers Entity Spawns
-        ModEntities.RegisterEntitySpawns();
+        
         //Mod Integration for Crossbows
-        ModIntegration.init();
+        
         //Register World Gen
         
         //Register Bastion Spawning
