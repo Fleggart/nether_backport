@@ -6,7 +6,6 @@ import com.unseen.nb.common.capabilities.CapabilityRespawnAnchor;
 import com.unseen.nb.common.commands.CommandLocateBastion;
 
 
-import com.unseen.nb.handler.StructureHandler;
 import com.unseen.nb.init.*;
 import com.unseen.nb.proxy.CommonProxy;
 import com.unseen.nb.util.LootTableExtendedFunc;
@@ -72,13 +71,13 @@ public class Main {
     @EventHandler
     public void init(FMLInitializationEvent e) {
         //Biome Init
-        BiomeRegister.registerBiomes();
+        
         ModNetworkPackets.registerNetworkPackets();
         CapabilityManager.INSTANCE.register(CapabilityRespawnAnchor.ICapabilityRespawnAnchor.class, new CapabilityRespawnAnchor.Storage(), CapabilityRespawnAnchor.RespawnAnchorMethods::new);
         //Furnace Anvil Recipes
         ModRecipes.init();
         //Registers the Structures and Templates
-        StructureHandler.handleStructureRegistries();
+        
     }
 
     @EventHandler
