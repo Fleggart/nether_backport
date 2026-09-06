@@ -11,7 +11,7 @@ import com.unseen.nb.proxy.CommonProxy;
 import com.unseen.nb.util.LootTableExtendedFunc;
 import com.unseen.nb.util.ModReference;
 import com.unseen.nb.util.NBLogger;
-import com.unseen.nb.util.integration.ModIntegration;
+
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.storage.loot.functions.LootFunctionManager;
