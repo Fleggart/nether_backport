@@ -1,6 +1,5 @@
 package com.unseen.nb.init;
 
-import com.unseen.nb.util.integration.ModIntegration;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
