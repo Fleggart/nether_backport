@@ -36,11 +36,7 @@ public class RegistryHandler {
     {
         event.getRegistry().registerAll(ModBlocks.BLOCKS.toArray(new Block[0]));
 
-        if(!ModIntegration.FUTURE_MC_LOADED)
-        {
-            //register the fill ins
-            event.getRegistry().registerAll(ModBlocksCompat.BLOCKS.toArray(new Block[0]));
-        }
+
         // blockRegistry = event.getRegistry();
     }
 
@@ -59,7 +55,7 @@ public class RegistryHandler {
         event.getRegistry().register(new ItemSlab(CRIMSON_SLAB_HALF, CRIMSON_SLAB_HALF, CRIMSON_SLAB_DOUBLE).setRegistryName(CRIMSON_SLAB_HALF.getRegistryName()));
         event.getRegistry().register(new ItemSlab(WARPED_SLAB_HALF, WARPED_SLAB_HALF, WARPED_SLAB_DOUBLE).setRegistryName(WARPED_SLAB_HALF.getRegistryName()));
 
-        if(!ModIntegration.FUTURE_MC_LOADED)
+       
         { event.getRegistry().registerAll(ModItemsCompat.ITEMS.toArray(new Item[0])); }
     }
 
@@ -103,20 +99,7 @@ public class RegistryHandler {
                 }
             }
 
-            if(!ModIntegration.FUTURE_MC_LOADED) {
-                //fill in blocks without futuremc
-                for (Block block : ModBlocksCompat.BLOCKS) {
-                    if (block instanceof IStateMappedBlock) {
-                        AdvancedStateMap.Builder builder = new AdvancedStateMap.Builder();
-                        ((IStateMappedBlock) block).setStateMapper(builder);
-                        ModelLoader.setCustomStateMapper(block, builder.build());
-                    }
 
-                    if (block instanceof IHasModel) {
-                        ((IHasModel) block).registerModels();
-                    }
-                }
-            }
 
             for (Item item : ModItemsCompat.ITEMS) {
                 if (item instanceof IHasModel) {
