@@ -1,11 +1,11 @@
 package com.unseen.nb.proxy;
 
-import com.unseen.nb.client.animation.IAnimatedEntity;
+
 import com.unseen.nb.client.particles.ParticleInversePortal;
 import com.unseen.nb.client.particles.ParticleObsidianTear;
 import com.unseen.nb.client.particles.ParticleSoul;
 import com.unseen.nb.client.particles.ParticleSoulFlame;
-import com.unseen.nb.handler.RenderHandler;
+
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.entity.EntityPlayerSP;
 import net.minecraft.client.particle.IParticleFactory;
