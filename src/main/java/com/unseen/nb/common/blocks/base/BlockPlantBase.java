@@ -55,7 +55,8 @@ public class BlockPlantBase extends BlockBush implements IHasModel, net.minecraf
     protected boolean canSustainBush(IBlockState state)
     {
         Block block = state.getBlock();
-        return block == Blocks.GRASS || block == Blocks.DIRT || block == Blocks.FARMLAND || block == ModBlocks.CRIMSON_GRASS || block == ModBlocks.WARPED_GRASS || block == ModBlocks.SOUL_SOIL;
+        // 删除了 CRIMSON_GRASS 和 WARPED_GRASS 的引用
+        return block == Blocks.GRASS || block == Blocks.DIRT || block == Blocks.FARMLAND || block == ModBlocks.SOUL_SOIL;
     }
 
     /** Swap the Bounding Box if it is a small plant. */
