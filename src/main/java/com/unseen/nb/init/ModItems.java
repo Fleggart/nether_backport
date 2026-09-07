@@ -21,7 +21,6 @@ public class ModItems {
 
 
     public static final HorseArmorType NETHERITE_HORSE_ARMOR = EnumHelper.addHorseArmor("netheriteHorseArmor", ModReference.MOD_ID + ":textures/models/armor/horse/horse_armor_netherite.png", 14);
-    public static final Item LODE_STONE_COMPASS = new ItemLodeStoneCompass("lode_stone_compass");
 
     public static final Item NETHERITE_HORSE_ARMOR_ITEM = new ItemNBHorseArmor("netherite_horse_armor", NETHERITE_HORSE_ARMOR, CreativeTabs.MISC);
     //Keeping Pigstep cause it has no generation rules in FutureMC
