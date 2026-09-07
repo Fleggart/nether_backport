@@ -277,16 +277,6 @@ public class ModUtils {
          return false;
     }
 
-    public static boolean isAllowedDimension(World world) {
-        for(int ids : BlocksConfig.allowedDimensions) {
-            if(world.provider.getDimension() == ids) {
-                return true;
-            }
-        }
-
-        return false;
-    }
-
     public static boolean isHoeWhitelisted(Block block) {
         for (String blockName : BlocksConfig.hoeWhitelistedBlocks) {
             if (ForgeRegistries.BLOCKS.getValue(new ResourceLocation(blockName)) == block || block instanceof BlockLeaves) {
