@@ -95,7 +95,7 @@ public class ModBlocks
 
     public static Block QUARTZ_BRICKS = new BlockBase("quartz_bricks", Material.ROCK, STONE_HARDNESS, STONE_RESISTANCE, SoundType.STONE).setCreativeTab(CreativeTabs.BUILDING_BLOCKS);
 
-    public static Block RESPAWN_ANCHOR = new BlockRespawnAnchor("respawn_anchor", Material.ROCK, OBSIDIAN_HARDNESS, OBSIDIAN_RESISTANCE, SoundType.STONE).setHarvestInfo("pickaxe", 3).setCreativeTab(CreativeTabs.DECORATIONS);
+    
 
     public static Block SHROOMLIGHT = new BlockBase("shroom_light", Material.GRASS, 1.0F, 1.0F, NBSoundTypes.SHROOM_LIGHT).setCreativeTab(CreativeTabs.DECORATIONS).setLightLevel(1.0F);
     public static Block SOUL_FIRE = new BlockSoulFire(CreativeTabs.DECORATIONS, "soul_fire").setLightLevel(0.7F);
