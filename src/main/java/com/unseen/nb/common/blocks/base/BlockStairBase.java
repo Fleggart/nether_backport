@@ -4,32 +4,36 @@ import com.unseen.nb.Main;
 import com.unseen.nb.handler.IHasModel;
 import com.unseen.nb.init.ModBlocks;
 import com.unseen.nb.init.ModItems;
-import net.minecraft.block.Block;
+import net.minecraft.block.BlockStairs;
 import net.minecraft.block.SoundType;
-import net.minecraft.block.material.Material;
+import net.minecraft.block.state.IBlockState;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 
-public class BlockBase extends Block implements IHasModel {
-    public BlockBase(String name, Material material) {
-        super(material);
+public class BlockStairBase extends BlockStairs implements IHasModel
+{
+    public BlockStairBase(String name, IBlockState modelState) {
+        super(modelState);
         setTranslationKey(name);
         setRegistryName(name);
-
+        this.setLightOpacity(255);
+        this.useNeighborBrightness = true;
         // Add both an item as a block and the block itself
         ModBlocks.BLOCKS.add(this);
         ModItems.ITEMS.add(new ItemBlock(this).setRegistryName(this.getRegistryName()));
     }
 
-    public BlockBase(String name, Material material, float hardness, float resistance, SoundType soundType) {
-        this(name, material);
+    public BlockStairBase(String name, IBlockState modelState, float hardness, float resistance, SoundType soundType) {
+        this(name, modelState);
         setHardness(hardness);
         setResistance(resistance);
         setSoundType(soundType);
+        this.setLightOpacity(255);
+        this.useNeighborBrightness = true;
     }
 
     /** An easy method for setting up harvesting per individual block that extends this */
-    public BlockBase setHarvestInfo(String tool, int level)
+    public BlockStairBase setHarvestInfo(String tool, int level)
     {
         this.setHarvestLevel(tool, level);
         return this;
