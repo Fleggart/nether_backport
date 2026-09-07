@@ -1,5 +1,6 @@
 package com.unseen.nb.proxy;
 
+import com.unseen.nb.common.event.EventOnSoulFire;
 import com.unseen.nb.common.network.ParticleMessage;
 import com.unseen.nb.init.ModNetworkPackets;
 import net.minecraft.item.Item;
@@ -10,7 +11,9 @@ import net.minecraftforge.fml.common.network.NetworkRegistry;
 
 public class CommonProxy {
 
-
+    public void init() {
+        MinecraftForge.EVENT_BUS.register(new EventOnSoulFire());
+    }
 
 
 
