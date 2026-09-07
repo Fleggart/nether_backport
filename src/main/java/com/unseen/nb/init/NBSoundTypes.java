@@ -39,9 +39,6 @@ public class NBSoundTypes {
     public static final SoundType ANCIENT_DEBRIS = new SoundType(1, 1, ModSoundHandler.ANCIENT_DEBRIS_BREAK, ModSoundHandler.ANCIENT_DEBRIS_BREAK,
             ModSoundHandler.ANCIENT_DEBRIS_BREAK, ModSoundHandler.ANCIENT_DEBRIS_BREAK, ModSoundHandler.ANCIENT_DEBRIS_BREAK);
 
-    public static final SoundType LODE_STONE = new SoundType(1, 1, SoundEvents.BLOCK_STONE_BREAK, SoundEvents.BLOCK_STONE_STEP,
-            ModSoundHandler.LODE_STONE_PLACE, SoundEvents.BLOCK_STONE_HIT, SoundEvents.BLOCK_STONE_FALL);
-
     public static final SoundType SHROOM_LIGHT = new SoundType(1, 1, ModSoundHandler.SHROOM_LIGHT_BREAK, ModSoundHandler.SHROOM_LIGHT_STEP,
             ModSoundHandler.SHROOM_LIGHT_BREAK, ModSoundHandler.SHROOM_LIGHT_HIT, ModSoundHandler.SHROOM_LIGHT_PlACE);
 
