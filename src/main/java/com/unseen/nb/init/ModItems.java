@@ -22,7 +22,7 @@ public class ModItems {
     // 删除这行
     // public static final HorseArmorType NETHERITE_HORSE_ARMOR = EnumHelper.addHorseArmor(...);
 
-    public static final Item LODE_STONE_COMPASS = new ItemLodeStoneCompass("lode_stone_compass");
+    
 
     // 删除这行
     // public static final Item NETHERITE_HORSE_ARMOR_ITEM = new ItemNBHorseArmor(...);
