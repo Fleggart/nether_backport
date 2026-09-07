@@ -48,13 +48,6 @@ public class RegistryHandler {
         event.getRegistry().registerAll(ModItems.ITEMS.toArray(new Item[0]));
         // Items.ALTAR = registerItem(new ItemBlock(Items.ALTAR_BLOCK), "altar");
 
-        /* Manually register the ItemSlabs, so we can reorganize the rest of the Slab code. */
-        event.getRegistry().register(new ItemSlab(BLACK_STONE_SLAB_HALF, BLACK_STONE_SLAB_HALF, BLACK_STONE_SLAB_DOUBLE).setRegistryName(BLACK_STONE_SLAB_HALF.getRegistryName()));
-        event.getRegistry().register(new ItemSlab(BLACK_BRICKS_SLAB_HALF, BLACK_BRICKS_SLAB_HALF, BLACK_BRICKS_SLAB_DOUBLE).setRegistryName(BLACK_BRICKS_SLAB_HALF.getRegistryName()));
-        event.getRegistry().register(new ItemSlab(POLISHED_BLACK_STONE_SLAB_HALF, POLISHED_BLACK_STONE_SLAB_HALF, POLISHED_BLACK_STONE_SLAB_DOUBLE).setRegistryName(POLISHED_BLACK_STONE_SLAB_HALF.getRegistryName()));
-        event.getRegistry().register(new ItemSlab(CRIMSON_SLAB_HALF, CRIMSON_SLAB_HALF, CRIMSON_SLAB_DOUBLE).setRegistryName(CRIMSON_SLAB_HALF.getRegistryName()));
-        event.getRegistry().register(new ItemSlab(WARPED_SLAB_HALF, WARPED_SLAB_HALF, WARPED_SLAB_DOUBLE).setRegistryName(WARPED_SLAB_HALF.getRegistryName()));
-
        
         { event.getRegistry().registerAll(ModItemsCompat.ITEMS.toArray(new Item[0])); }
     }
