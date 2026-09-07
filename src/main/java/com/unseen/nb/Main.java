@@ -1,7 +1,7 @@
 package com.unseen.nb;
 
 import com.sun.jna.Structure;
-
+import com.unseen.nb.common.blocks.tileentity.TilePiglinHead;
 import com.unseen.nb.common.capabilities.CapabilityRespawnAnchor;
 import com.unseen.nb.common.commands.CommandLocateBastion;
 
@@ -49,13 +49,13 @@ public class Main {
     @EventHandler
     public void preInit(FMLPreInitializationEvent event) {
     //Proxy Init
-    
+    proxy.init();
         //Registers Sounds
         ModSoundHandler.registerSounds();
         //Registers Entities
         
         //Piglin Head
-        
+        GameRegistry.registerTileEntity(TilePiglinHead.class, new ResourceLocation(ModReference.MOD_ID, "piglin_skull"));
         //Registers Entity Spawns
         
         //Mod Integration for Crossbows
