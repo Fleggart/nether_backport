@@ -146,20 +146,8 @@ public class NBWorldConfig {
     @Config.RequiresMcRestart
     public static boolean enabled_double_height = true;
 
-    @Config.Name("Blackstone Max Height Generation")
-    @Config.Comment("Change the max height generation of Blackstone")
-    @Config.RequiresMcRestart
-    public static int blackstone_max_y = 120;
 
-    @Config.Name("Blackstone Min Height Generation")
-    @Config.Comment("Change the min height generation of Blackstone")
-    @Config.RequiresMcRestart
-    public static int blackstone_min_y = 20;
-
-    @Config.Name("Blackstone Spawn Chances")
-    @Config.Comment("Change the chance of Blackstone spawning per chunk")
-    @Config.RequiresMcRestart
-    public static int blacstone_spawn_chances = 10;
+    
 
     @Config.Name("Nether Gold Ore Height Generation")
     @Config.Comment("Change the max height generation of Nether Gold Ore")
