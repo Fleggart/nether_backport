@@ -179,9 +179,6 @@ public class ModSoundHandler {
 
     ANCIENT_DEBRIS_BREAK = registerSound("debris.break", "block");
 
-    LODE_STONE_PLACE = registerSound("lode_stone.place", "block");
-    LODES_STONE_LOCK = registerSound("lode_stone.lock", "block");
-
     RESPAWN_ANCHOR_AMBIENT = registerSound("respawn_anchor.ambient", "block");
     RESPAWN_ANCHOR_CHARGE = registerSound("respawn_anchor.charge", "block");
     RESPAWN_ANCHOR_DEPLETE = registerSound("respawn_anchor.deplete", "block");
