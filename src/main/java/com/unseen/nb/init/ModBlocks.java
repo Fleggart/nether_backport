@@ -47,8 +47,7 @@ public class ModBlocks
 
     public static final Block CRYING_OBSIDIAN = new BlockCryingObsidian("cry_obi", Material.ROCK, OBSIDIAN_HARDNESS, OBSIDIAN_RESISTANCE, SoundType.STONE).setHarvestInfo("pickaxe", 3).setCreativeTab(CreativeTabs.BUILDING_BLOCKS).setLightLevel(0.7F);
 
-    public static final Block GILDED_BLACKSTONE = new BlockGildedBlackstone("gilded_blackstone", Material.ROCK, STONE_HARDNESS, STONE_RESISTANCE, NBSoundTypes.NETHER_ORE).setCreativeTab(CreativeTabs.BUILDING_BLOCKS);
-
+    
     public static Block NETHER_GOLD_ORE = new BlockNetherOre("nether_gold_ore", Material.ROCK, 3.0F, 5.0F, NBSoundTypes.NETHER_ORE).setCreativeTab(CreativeTabs.BUILDING_BLOCKS);
 
     public static Block PIGLIN_HEAD = new BlockPiglinHead("piglin_head").setCreativeTab(CreativeTabs.DECORATIONS);
