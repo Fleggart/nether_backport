@@ -49,7 +49,7 @@ public class Main {
     @EventHandler
     public void preInit(FMLPreInitializationEvent event) {
     //Proxy Init
-    proxy.init();
+    
         //Registers Sounds
         ModSoundHandler.registerSounds();
         //Registers Entities
