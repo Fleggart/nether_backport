@@ -72,7 +72,11 @@ public class ModUtils {
             }
         }
 
-        
+        for(BlockPos blockPos : affectedConversionPositions) {
+            if(world.getBlockState(blockPos).getBlock() == ModBlocks.SOUL_SOIL) {
+                world.setBlockState(blockPos, Blocks.SOUL_SAND.getDefaultState());
+            }
+        }
     }
 
 
