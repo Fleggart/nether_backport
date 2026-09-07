@@ -3,8 +3,7 @@ package com.unseen.nb;
 import com.sun.jna.Structure;
 import com.unseen.nb.common.blocks.tileentity.TilePiglinHead;
 import com.unseen.nb.common.capabilities.CapabilityRespawnAnchor;
-import com.unseen.nb.common.commands.CommandLocateBastion;
-
+// 删除 import com.unseen.nb.common.commands.CommandLocateBastion;
 
 import com.unseen.nb.init.*;
 import com.unseen.nb.proxy.CommonProxy;
@@ -29,7 +28,6 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-// PR #17 szymonhajbowicz fix for detecting Dependencies
 @Mod(modid = ModReference.MOD_ID, name = ModReference.NAME, version = ModReference.VERSION, dependencies = "required-before:nether_api")
 public class Main {
 
@@ -41,66 +39,40 @@ public class Main {
     @Mod.Instance
     public static Main instance;
 
-
     public Main() {
         NBLogger.clearLog();
     }
 
     @EventHandler
     public void preInit(FMLPreInitializationEvent event) {
-    //Proxy Init
-    proxy.init();
-        //Registers Sounds
+        proxy.init();
         ModSoundHandler.registerSounds();
-        //Registers Entities
-        
-        //Piglin Head
         GameRegistry.registerTileEntity(TilePiglinHead.class, new ResourceLocation(ModReference.MOD_ID, "piglin_skull"));
-        //Registers Entity Spawns
-        
-        //Mod Integration for Crossbows
-        
-        //Register World Gen
-        
-        //Register Bastion Spawning
-        
-        //Loot Table Functions Extension
         LootFunctionManager.registerFunction(new LootTableExtendedFunc.Serializer());
     }
 
     @EventHandler
     public void init(FMLInitializationEvent e) {
-        //Biome Init
-        
         ModNetworkPackets.registerNetworkPackets();
         CapabilityManager.INSTANCE.register(CapabilityRespawnAnchor.ICapabilityRespawnAnchor.class, new CapabilityRespawnAnchor.Storage(), CapabilityRespawnAnchor.RespawnAnchorMethods::new);
-        //Furnace Anvil Recipes
-        
-        //Registers the Structures and Templates
-        
     }
 
     @EventHandler
     public void postInit(FMLPostInitializationEvent e) {
-
+        // 留空
     }
 
+    // 删除整个 serverLoad 方法
+    /*
     @Mod.EventHandler
-    public void serverLoad(FMLServerStartingEvent event)
-    {
-        // register server commands
+    public void serverLoad(FMLServerStartingEvent event) {
         event.registerServerCommand(new CommandLocateBastion());
     }
-
+    */
 
     public static <MSG extends IMessage> void sendMSGToAll(MSG message) {
-
-        //  for(EntityPlayerMP playerMP : Minecraft.getMinecraft().) {
-        //  sendNonLocal(message, playerMP);
-        //  }
-        //network.sendToAll(message);
+        // 留空
     }
-
 
     public static <MSG extends IMessage> void sendNonLocal(MSG message, EntityPlayerMP playerMP) {
         network.sendTo(message, playerMP);
