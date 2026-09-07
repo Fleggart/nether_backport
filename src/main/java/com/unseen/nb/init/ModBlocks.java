@@ -87,7 +87,7 @@ public class ModBlocks
 
     public static final Block GILDED_BLACKSTONE = new BlockGildedBlackstone("gilded_blackstone", Material.ROCK, STONE_HARDNESS, STONE_RESISTANCE, NBSoundTypes.NETHER_ORE).setCreativeTab(CreativeTabs.BUILDING_BLOCKS);
 
-    public static Block LODE_STONE = new BlockLodeStone("lode_stone", Material.ROCK, 3.5F, 3.5F, NBSoundTypes.LODE_STONE).setCreativeTab(CreativeTabs.DECORATIONS);
+    
 
     public static Block NETHER_GOLD_ORE = new BlockNetherOre("nether_gold_ore", Material.ROCK, 3.0F, 5.0F, NBSoundTypes.NETHER_ORE).setCreativeTab(CreativeTabs.BUILDING_BLOCKS);
 
