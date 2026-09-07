@@ -2,8 +2,6 @@ package com.unseen.nb.init;
 
 import com.unseen.nb.common.blocks.*;
 import com.unseen.nb.common.blocks.base.*;
-// 删除 import com.unseen.nb.common.blocks.base.slab.*;
-
 import net.minecraft.block.*;
 import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
@@ -34,30 +32,15 @@ public class ModBlocks
 
     // ===== 黑石系列 =====
     public static Block BLACK_STONE = new BlockBase("black_stone", Material.ROCK, STONE_HARDNESS, STONE_RESISTANCE, SoundType.STONE).setCreativeTab(CreativeTabs.BUILDING_BLOCKS);
-    
-    // 删除以下半砖声明
-    // public static final BlockSlab BLACK_STONE_SLAB_HALF = new BlockHalfSlab(...);
-    // public static final BlockSlab BLACK_STONE_SLAB_DOUBLE = new BlockDoubleSlab(...);
-    
     public static Block BLACK_STONE_STAIRS = new BlockStairBase("black_stone_stairs", ModBlocks.BLACK_STONE.getDefaultState(), STONE_HARDNESS, STONE_RESISTANCE, SoundType.STONE).setCreativeTab(CreativeTabs.BUILDING_BLOCKS);
     public static final Block BLACK_STONE_WALL = new BlockNetherWall("black_stone_wall", Material.ROCK, STONE_HARDNESS, STONE_RESISTANCE, SoundType.STONE, CreativeTabs.DECORATIONS);
 
     public static Block BLACK_STONE_BRICKS = new BlockBase("black_stone_bricks", Material.ROCK, STONE_HARDNESS, STONE_RESISTANCE, SoundType.STONE).setCreativeTab(CreativeTabs.BUILDING_BLOCKS);
-    
-    // 删除以下半砖声明
-    // public static final BlockSlab BLACK_BRICKS_SLAB_HALF = new BlockHalfSlab(...);
-    // public static final BlockSlab BLACK_BRICKS_SLAB_DOUBLE = new BlockDoubleSlab(...);
-    
     public static Block BLACK_STONE_BRICK_STAIRS = new BlockStairBase("black_stone_brick_stairs", ModBlocks.BLACK_STONE_BRICKS.getDefaultState(), STONE_HARDNESS, STONE_RESISTANCE, SoundType.STONE).setCreativeTab(CreativeTabs.BUILDING_BLOCKS);
     public static final Block POLISHED_BRICKS_STONE_WALL = new BlockNetherWall("bricks_stone_wall", Material.ROCK, STONE_HARDNESS, STONE_RESISTANCE, SoundType.STONE, CreativeTabs.DECORATIONS);
     public static Block CRACKED_STONE_BRICKS = new BlockBase("cracked_stone_bricks", Material.ROCK, STONE_HARDNESS, STONE_RESISTANCE, SoundType.STONE).setCreativeTab(CreativeTabs.BUILDING_BLOCKS);
 
     public static Block POLISHED_BLACK_STONE = new BlockBase("polished_black_stone", Material.ROCK, STONE_HARDNESS, STONE_RESISTANCE, SoundType.STONE).setCreativeTab(CreativeTabs.BUILDING_BLOCKS);
-    
-    // 删除以下半砖声明
-    // public static final BlockSlab POLISHED_BLACK_STONE_SLAB_HALF = new BlockHalfSlab(...);
-    // public static final BlockSlab POLISHED_BLACK_STONE_SLAB_DOUBLE = new BlockDoubleSlab(...);
-    
     public static Block POLISHED_BLACK_STONE_STAIRS = new BlockStairBase("polished_black_stone_stairs", ModBlocks.POLISHED_BLACK_STONE.getDefaultState(), STONE_HARDNESS, STONE_RESISTANCE, SoundType.STONE).setCreativeTab(CreativeTabs.BUILDING_BLOCKS);
     public static final Block POLISHED_BLACK_STONE_WALL = new BlockNetherWall("polished_stone_wall", Material.ROCK, STONE_HARDNESS, STONE_RESISTANCE, SoundType.STONE, CreativeTabs.DECORATIONS);
     public static Block CHISELED_POLISHED_BLACK_STONE = new BlockBase("chisled_polished_black_stone", Material.ROCK, STONE_HARDNESS, STONE_RESISTANCE, SoundType.STONE).setCreativeTab(CreativeTabs.BUILDING_BLOCKS);
@@ -71,31 +54,20 @@ public class ModBlocks
     public static final Block CRIMSON_DOOR = new BlockNetherDoor("crimson_door", WOOD_HARDNESS, WOOD_RESISTANCE, CreativeTabs.REDSTONE, SoundType.WOOD);
     public static final Block CRIMSON_FENCE = new BlockFenceBase("crimson_fence", Material.GROUND, MapColor.RED_STAINED_HARDENED_CLAY, WOOD_HARDNESS, WOOD_RESISTANCE);
     public static final Block CRIMSON_GATE = new BlockFenceGateBase("crimson_gate", BlockPlanks.EnumType.OAK, WOOD_HARDNESS, WOOD_RESISTANCE);
-    
-    // 删除以下半砖声明
-    // public static final BlockSlab CRIMSON_SLAB_HALF = new BlockHalfSlab(...);
-    // public static final BlockSlab CRIMSON_SLAB_DOUBLE = new BlockDoubleSlab(...);
-    
     public static final Block CRIMSON_STAIRS = new BlockStairBase("crimson_stairs", CRIMSON_PLANKS.getDefaultState(), WOOD_HARDNESS, WOOD_RESISTANCE, SoundType.WOOD).setHarvestInfo("axe", 0).setCreativeTab(CreativeTabs.BUILDING_BLOCKS);
     public static final Block CRIMSON_TRAPDOOR = new BlockNetherTrapDoor("crimson_trapdoor", WOOD_RESISTANCE, WOOD_HARDNESS, CreativeTabs.REDSTONE, SoundType.WOOD);
 
-    public static Block CRIMSON_ROOTS = new BlockPlantBase("crimson_roots", Material.PLANTS, NBSoundTypes.ROOTS);
-    public static Block CRIMSON_VINES = new BlockVineBase("crimson_vine", Material.PLANTS, NBSoundTypes.ROOTS);
     public static final Block CRIMSON_WART = new BlockBase("crimson_wart", Material.GRASS, 1.0F, 1.0F, NBSoundTypes.WART).setCreativeTab(CreativeTabs.BUILDING_BLOCKS);
 
     public static final Block CRYING_OBSIDIAN = new BlockCryingObsidian("cry_obi", Material.ROCK, OBSIDIAN_HARDNESS, OBSIDIAN_RESISTANCE, SoundType.STONE).setHarvestInfo("pickaxe", 3).setCreativeTab(CreativeTabs.BUILDING_BLOCKS).setLightLevel(0.7F);
 
     public static final Block GILDED_BLACKSTONE = new BlockGildedBlackstone("gilded_blackstone", Material.ROCK, STONE_HARDNESS, STONE_RESISTANCE, NBSoundTypes.NETHER_ORE).setCreativeTab(CreativeTabs.BUILDING_BLOCKS);
 
-    
-
     public static Block NETHER_GOLD_ORE = new BlockNetherOre("nether_gold_ore", Material.ROCK, 3.0F, 5.0F, NBSoundTypes.NETHER_ORE).setCreativeTab(CreativeTabs.BUILDING_BLOCKS);
 
     public static Block PIGLIN_HEAD = new BlockPiglinHead("piglin_head").setCreativeTab(CreativeTabs.DECORATIONS);
 
     public static Block QUARTZ_BRICKS = new BlockBase("quartz_bricks", Material.ROCK, STONE_HARDNESS, STONE_RESISTANCE, SoundType.STONE).setCreativeTab(CreativeTabs.BUILDING_BLOCKS);
-
-    
 
     public static Block SHROOMLIGHT = new BlockBase("shroom_light", Material.GRASS, 1.0F, 1.0F, NBSoundTypes.SHROOM_LIGHT).setCreativeTab(CreativeTabs.DECORATIONS).setLightLevel(1.0F);
     public static Block SOUL_FIRE = new BlockSoulFire(CreativeTabs.DECORATIONS, "soul_fire").setLightLevel(0.7F);
@@ -110,16 +82,8 @@ public class ModBlocks
     public static final Block WARPED_DOOR = new BlockNetherDoor("warped_door", WOOD_HARDNESS, WOOD_RESISTANCE, CreativeTabs.REDSTONE, SoundType.WOOD);
     public static final Block WARPED_FENCE = new BlockFenceBase("warped_fence", Material.GROUND, MapColor.CYAN_STAINED_HARDENED_CLAY, WOOD_HARDNESS, WOOD_RESISTANCE);
     public static final Block WARPED_GATE = new BlockFenceGateBase("warped_gate", BlockPlanks.EnumType.OAK, WOOD_HARDNESS, WOOD_RESISTANCE);
-    
-    // 删除以下半砖声明
-    // public static final BlockSlab WARPED_SLAB_HALF = new BlockHalfSlab(...);
-    // public static final BlockSlab WARPED_SLAB_DOUBLE = new BlockDoubleSlab(...);
-    
     public static final Block WARPED_STAIRS = new BlockStairBase("warped_stairs", WARPED_PLANKS.getDefaultState(), WOOD_HARDNESS, WOOD_RESISTANCE, SoundType.WOOD).setHarvestInfo("axe", 0).setCreativeTab(CreativeTabs.BUILDING_BLOCKS);
     public static final Block WARPED_TRAPDOOR = new BlockNetherTrapDoor("warped_trapdoor", WOOD_RESISTANCE, WOOD_HARDNESS, CreativeTabs.REDSTONE, SoundType.WOOD);
 
     public static final Block WARPED_WART = new BlockBase("warped_wart", Material.GRASS, 1.0F, 1.0F, NBSoundTypes.WART).setCreativeTab(CreativeTabs.BUILDING_BLOCKS);
-    public static Block WARPED_ROOTS = new BlockPlantBase("warped_roots", Material.PLANTS, NBSoundTypes.ROOTS);
-    public static Block WARPED_SPROUT = new BlockPlantBase("warped_sprout", Material.PLANTS, NBSoundTypes.SPROUT).setRequiresShears(true).setIsSmall(true);
-    public static Block WARPED_VINES = new BlockVineUpBase("warped_vine", Material.PLANTS, NBSoundTypes.ROOTS);
 }
