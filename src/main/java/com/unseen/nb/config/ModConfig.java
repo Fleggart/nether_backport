@@ -40,20 +40,10 @@ public class ModConfig {
     @Config.RequiresMcRestart
     public static double attackDamageScale = 1;
 
-    @Config.Name("Netherite Sword Damage")
-    @Config.Comment("Change the damage of the Netherite Sword")
-    @Config.RequiresMcRestart
-    public static float netherite_sword_damage = 7;
+    
 
-    @Config.Name("Netherite Armor Toughness")
-    @Config.Comment("Change the Armor Toughess value of Netherite Armor")
-    @Config.RequiresMcRestart
-    public static float nether_arnor_toughness = 3;
-
-    @Config.Name("Netherite Armor Multiplier")
-    @Config.Comment("Multiplier for Netherite Armor Scale")
-    @Config.RequiresMcRestart
-    public static double nether_armor_multiplier = 1;
+    
+    
 
     @Config.Name("Disable Basalt Deltas")
     @Config.Comment("The Basalt Deltas in the future will get a rework to help performance, you may disable them if they are tanking performance. default: false")
