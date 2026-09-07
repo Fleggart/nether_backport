@@ -61,12 +61,10 @@ public class ModSoundHandler {
     public static SoundEvent SHROOM_LIGHT_STEP;
     public static SoundEvent SHROOM_LIGHT_PlACE;
 
-    public static SoundEvent ROOTS_BREAK;
-    public static SoundEvent ROOTS_HIT;
-    public static SoundEvent ROOTS_STEP;
-    public static SoundEvent ROOTS_PLACE;
 
-    public static SoundEvent SPROUT_BREAK;
+
+    
+
 
     public static SoundEvent STEM_BREAK;
     public static SoundEvent STEM_STEP;
@@ -181,12 +179,12 @@ public class ModSoundHandler {
     SHROOM_LIGHT_PlACE = registerSound("shroom_light.place", "block");
     SHROOM_LIGHT_HIT = registerSound("shroom_light.hit", "block");
 
-    ROOTS_BREAK = registerSound("roots.break", "block");
-    ROOTS_STEP = registerSound("roots.step", "block");
-    ROOTS_PLACE = registerSound("roots.place", "block");
-    ROOTS_HIT = registerSound("roots.hit", "block");
+    
+    
+    
+    
 
-    SPROUT_BREAK = registerSound("sprout.break", "block");
+    
 
     SOUL_LANTERN_BREAK = registerSound("soul_lantern.break", "block");
     SOUL_LANTERN_PlACE = registerSound("soul_lantern.place", "block");
