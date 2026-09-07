@@ -27,5 +27,5 @@ public class ModItems {
     // 删除这行
     // public static final Item NETHERITE_HORSE_ARMOR_ITEM = new ItemNBHorseArmor(...);
 
-    public static final Item PIGSTEP_MUSIC_DISC = new ItemPigStepDisc("pig_step_disc", ModSoundHandler.PIG_STEP_DISC);
+    
 }
