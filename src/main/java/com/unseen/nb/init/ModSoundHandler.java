@@ -50,9 +50,9 @@ public class ModSoundHandler {
 
     public static SoundEvent ANCIENT_DEBRIS_BREAK;
 
-    public static SoundEvent LODE_STONE_PLACE;
+    
 
-    public static SoundEvent LODES_STONE_LOCK;
+    
 
     public static SoundEvent RESPAWN_ANCHOR_AMBIENT;
     public static SoundEvent RESPAWN_ANCHOR_CHARGE;
