@@ -255,19 +255,6 @@ public class ModUtils {
         return false;
     }
 
-    public static boolean hasEnchant(EntityLivingBase entityIn) {
-        return EnchantmentHelper.getMaxEnchantmentLevel(ModEnchantments.SOUL_SPEED, entityIn) > 0;
-    }
-
-    public static boolean getBlocksThatCanBeUsed(Block block) {
-        for (String blockName : BlocksConfig.blocksForEnchant) {
-            if (ForgeRegistries.BLOCKS.getValue(new ResourceLocation(blockName)) == block) {
-                return true;
-            }
-        }
-        return false;
-    }
-
     public static boolean getItemsForBarter(Item item) {
         for(String itemName : NBEntitiesConfig.itemsForBarter) {
             if(ForgeRegistries.ITEMS.getValue(new ResourceLocation(itemName)) == item) {
