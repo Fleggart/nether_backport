@@ -16,7 +16,7 @@ import java.util.List;
 public class ModEnchantments {
     public static final List<Enchantment> ENCHANTMENT_LIST = new ArrayList<Enchantment>();
 
-    public static final Enchantment SOUL_SPEED = addEnchantment(new NBEnchantmentSoulSpeed("soul_speed", Enchantment.Rarity.VERY_RARE, EnumEnchantmentType.ARMOR_FEET));
+    
 
     private static Enchantment addEnchantment(Enchantment enchantmentIn) {
         ModEnchantments.ENCHANTMENT_LIST.add(enchantmentIn);
