@@ -42,9 +42,7 @@ public class NBSoundTypes {
     public static final SoundType SHROOM_LIGHT = new SoundType(1, 1, ModSoundHandler.SHROOM_LIGHT_BREAK, ModSoundHandler.SHROOM_LIGHT_STEP,
             ModSoundHandler.SHROOM_LIGHT_BREAK, ModSoundHandler.SHROOM_LIGHT_HIT, ModSoundHandler.SHROOM_LIGHT_PlACE);
 
-    public static final SoundType ROOTS = new SoundType(1, 1, ModSoundHandler.ROOTS_BREAK, ModSoundHandler.ROOTS_STEP,
-            ModSoundHandler.ROOTS_PLACE, ModSoundHandler.ROOTS_HIT, ModSoundHandler.ROOTS_PLACE);
+    
 
-    public static final SoundType SPROUT = new SoundType(1, 1, ModSoundHandler.SPROUT_BREAK, ModSoundHandler.SPROUT_BREAK,
-            ModSoundHandler.SPROUT_BREAK, ModSoundHandler.SPROUT_BREAK, ModSoundHandler.SPROUT_BREAK);
+    
 }
