@@ -54,10 +54,7 @@ public class ModSoundHandler {
 
     
 
-    public static SoundEvent RESPAWN_ANCHOR_AMBIENT;
-    public static SoundEvent RESPAWN_ANCHOR_CHARGE;
-    public static SoundEvent RESPAWN_ANCHOR_DEPLETE;
-    public static SoundEvent RESPAWN_ANCHOR_SET_SPAWN;
+
 
     public static SoundEvent SHROOM_LIGHT_BREAK;
     public static SoundEvent SHROOM_LIGHT_HIT;
@@ -178,11 +175,6 @@ public class ModSoundHandler {
     NETHERITE_BLOCK_HIT = registerSound("netherite.hit", "block");
 
     ANCIENT_DEBRIS_BREAK = registerSound("debris.break", "block");
-
-    RESPAWN_ANCHOR_AMBIENT = registerSound("respawn_anchor.ambient", "block");
-    RESPAWN_ANCHOR_CHARGE = registerSound("respawn_anchor.charge", "block");
-    RESPAWN_ANCHOR_DEPLETE = registerSound("respawn_anchor.deplete", "block");
-    RESPAWN_ANCHOR_SET_SPAWN = registerSound("respawn_anchor.set_spawn", "block");
 
     SHROOM_LIGHT_BREAK = registerSound("shroom_light.break", "block");
     SHROOM_LIGHT_STEP = registerSound("shroom_light.step", "block");
