@@ -26,4 +26,3 @@ public class ItemBaseCompat extends Item implements IHasModel {
         Main.proxy.registerItemRenderer(this, 0, "inventory");
     }
 }
-
