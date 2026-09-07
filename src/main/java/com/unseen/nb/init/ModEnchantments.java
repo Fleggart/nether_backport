@@ -1,7 +1,5 @@
 package com.unseen.nb.init;
 
-
-import com.unseen.nb.common.enchantments.NBEnchantmentSoulSpeed;
 import com.unseen.nb.util.ModReference;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnumEnchantmentType;
