@@ -1,12 +1,12 @@
 package com.unseen.nb.util;
 
 import com.google.common.collect.Lists;
-import com.unseen.nb.common.enchantments.NBEnchantmentSoulSpeed;
+
 import com.unseen.nb.config.BlocksConfig;
 import com.unseen.nb.config.ModConfig;
 import com.unseen.nb.config.NBEntitiesConfig;
 import com.unseen.nb.init.ModBlocks;
-import com.unseen.nb.init.ModEnchantments;
+
 import net.minecraft.block.*;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.enchantment.EnchantmentHelper;
