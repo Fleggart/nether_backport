@@ -2,7 +2,7 @@ package com.unseen.nb;
 
 import com.sun.jna.Structure;
 import com.unseen.nb.common.blocks.tileentity.TilePiglinHead;
-import com.unseen.nb.common.capabilities.CapabilityRespawnAnchor;
+
 // 删除 import com.unseen.nb.common.commands.CommandLocateBastion;
 
 import com.unseen.nb.init.*;
@@ -54,7 +54,7 @@ public class Main {
     @EventHandler
     public void init(FMLInitializationEvent e) {
         ModNetworkPackets.registerNetworkPackets();
-        CapabilityManager.INSTANCE.register(CapabilityRespawnAnchor.ICapabilityRespawnAnchor.class, new CapabilityRespawnAnchor.Storage(), CapabilityRespawnAnchor.RespawnAnchorMethods::new);
+        
     }
 
     @EventHandler
