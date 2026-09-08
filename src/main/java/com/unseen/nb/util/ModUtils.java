@@ -1,24 +1,18 @@
 package com.unseen.nb.util;
 
 import com.google.common.collect.Lists;
-import com.unseen.nb.config.ModConfig;
 import net.minecraft.block.*;
 import net.minecraft.block.state.IBlockState;
-import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.MultiPartEntityPart;
-import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
-import net.minecraft.item.Item;
 import net.minecraft.util.DamageSource;
-import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
-import net.minecraftforge.fml.common.registry.ForgeRegistries;
 
 import java.util.List;
 import java.util.Random;
@@ -26,6 +20,7 @@ import java.util.function.Function;
 import java.util.function.Predicate;
 
 public class ModUtils {
+
     public static int getAverageGroundHeight(World world, int x, int z, int sizeX, int sizeZ, int maxVariation) {
         sizeX = x + sizeX;
         sizeZ = z + sizeZ;
@@ -47,61 +42,54 @@ public class ModUtils {
     }
 
     public static void replaceBlocksInRandCircle(World world, int radius, double x, double y, double z) {
-
-        //This is for the Conversion to Ash Wastelands blocks
         List<BlockPos> affectedConversionPositions = Lists.newArrayList();
         int radius_int_conversion = (int) Math.ceil(radius);
 
         for (int dx = -radius_int_conversion; dx < radius_int_conversion + 1; dx++) {
-            // fast calculate affected blocks
-            int y_lim = (int) Math.sqrt(radius_int_conversion*radius_int_conversion-dx*dx);
+            int y_lim = (int) Math.sqrt(radius_int_conversion * radius_int_conversion - dx * dx);
             for (int dy = -y_lim; dy < y_lim + 1; dy++) {
-                int z_lim = (int) Math.sqrt(radius_int_conversion*radius_int_conversion-dx*dx-dy*dy);
+                int z_lim = (int) Math.sqrt(radius_int_conversion * radius_int_conversion - dx * dx - dy * dy);
                 for (int dz = -z_lim; dz < z_lim + 1; dz++) {
                     BlockPos blockPos = new BlockPos(x + dx, y + dy, z + dz);
-                    double power = interperetVar(Math.sqrt(dx*dx+dy*dy+dz*dz), radius);
-                    if ((power>1) ||(power > new Random().nextDouble())){
+                    double power = interperetVar(Math.sqrt(dx * dx + dy * dy + dz * dz), radius);
+                    if ((power > 1) || (power > new Random().nextDouble())) {
                         affectedConversionPositions.add(blockPos);
                     }
                 }
             }
         }
-
-        
     }
 
-
     public static void createNetherrackCorruption(World world, int radius, double x, double y, double z) {
-
-        //This is for the Conversion to Ash Wastelands blocks
         List<BlockPos> affectedConversionPositions = Lists.newArrayList();
         int radius_int_conversion = (int) Math.ceil(radius);
 
+        Random rand = world.rand; // 重用world的随机数生成器
+
         for (int dx = -radius_int_conversion; dx < radius_int_conversion + 1; dx++) {
-            // fast calculate affected blocks
-            int y_lim = (int) Math.sqrt(radius_int_conversion*radius_int_conversion-dx*dx);
+            int y_lim = (int) Math.sqrt(radius_int_conversion * radius_int_conversion - dx * dx);
             for (int dy = -y_lim; dy < y_lim + 1; dy++) {
-                int z_lim = (int) Math.sqrt(radius_int_conversion*radius_int_conversion-dx*dx-dy*dy);
+                int z_lim = (int) Math.sqrt(radius_int_conversion * radius_int_conversion - dx * dx - dy * dy);
                 for (int dz = -z_lim; dz < z_lim + 1; dz++) {
                     BlockPos blockPos = new BlockPos(x + dx, y + dy, z + dz);
-                    double power = interperetVar(Math.sqrt(dx*dx+dy*dy+dz*dz), radius);
-                    if ((power>1) ||(power > new Random().nextDouble())){
+                    double power = interperetVar(Math.sqrt(dx * dx + dy * dy + dz * dz), radius);
+                    if ((power > 1) || (power > rand.nextDouble())) {
                         affectedConversionPositions.add(blockPos);
                     }
                 }
             }
         }
 
-        for(BlockPos blockPos : affectedConversionPositions) {
-            if(world.rand.nextInt(5) != 0) {
-                if (world.getBlockState(blockPos).getBlock() instanceof BlockDirt || world.getBlockState(blockPos).getBlock() instanceof BlockSand || world.getBlockState(blockPos).getBlock() instanceof BlockGrass ||
-                        world.getBlockState(blockPos).getBlock() instanceof BlockStone) {
+        for (BlockPos blockPos : affectedConversionPositions) {
+            if (world.rand.nextInt(5) != 0) {
+                IBlockState state = world.getBlockState(blockPos);
+                Block block = state.getBlock();
+                if (block instanceof BlockDirt || block instanceof BlockSand || block instanceof BlockGrass || block instanceof BlockStone) {
                     world.setBlockState(blockPos, Blocks.NETHERRACK.getDefaultState());
                 }
             }
         }
     }
-
 
     public static BlockPos searchForBlocks(AxisAlignedBB box, World world, Entity entity, IBlockState block) {
         int i = MathHelper.floor(box.minX);
@@ -116,28 +104,23 @@ public class ModUtils {
                     BlockPos blockpos = new BlockPos(x, y, z);
                     IBlockState iblockstate = world.getBlockState(blockpos);
 
-
-                    if(iblockstate == block) {
-
+                    if (iblockstate == block) {
                         return blockpos;
                     }
                 }
             }
         }
-
         return null;
     }
 
-    public static double interperetVar(double dist, double radius){
+    public static double interperetVar(double dist, double radius) {
         double decay_rd = radius * 0.95;
-        if(dist < decay_rd){
+        if (dist < decay_rd) {
             return 1.1d;
-        }
-        else {
-            return -(1/(radius-decay_rd))*(dist-decay_rd) + 1;
+        } else {
+            return -(1 / (radius - decay_rd)) * (dist - decay_rd) + 1;
         }
     }
-
 
     public static void handleAreaImpact(float radius, Function<Entity, Float> maxDamage, Entity source, Vec3d pos, DamageSource damageSource,
                                         float knockbackFactor, int fireFactor, boolean damageDecay) {
@@ -151,33 +134,24 @@ public class ModUtils {
         double radiusSq = Math.pow(radius, 2);
 
         list.stream().filter(isInstance).forEach((entity) -> {
-
-            // Get the hitbox size of the entity because otherwise explosions are less
-            // effective against larger mobs
             double avgEntitySize = entity.getEntityBoundingBox().getAverageEdgeLength() * 0.75;
 
-            // Choose the closest distance from the center or the head to encourage
-            // headshots
             double distance = Math.min(Math.min(getCenter(entity.getEntityBoundingBox()).distanceTo(pos),
                             entity.getPositionVector().add(ModUtils.yVec(entity.getEyeHeight())).distanceTo(pos)),
                     entity.getPositionVector().distanceTo(pos));
 
-            // Subtracting the average size makes it so that the full damage can be dealt
-            // with a direct hit
             double adjustedDistance = Math.max(distance - avgEntitySize, 0);
             double adjustedDistanceSq = Math.pow(adjustedDistance, 2);
             double damageFactor = damageDecay ? Math.max(0, Math.min(1, (radiusSq - adjustedDistanceSq) / radiusSq)) : 1;
 
-            // Damage decays by the square to make missed impacts less powerful
             double damageFactorSq = Math.pow(damageFactor, 2);
             double damage = maxDamage.apply(entity) * damageFactorSq;
             if (damage > 0 && adjustedDistanceSq < radiusSq) {
                 entity.setFire((int) (fireFactor * damageFactorSq));
-                if(entity.attackEntityFrom(damageSource, (float) damage)) {
+                if (entity.attackEntityFrom(damageSource, (float) damage)) {
                     double entitySizeFactor = avgEntitySize == 0 ? 1 : Math.max(0.5, Math.min(1, 1 / avgEntitySize));
                     double entitySizeFactorSq = Math.pow(entitySizeFactor, 2);
 
-                    // Velocity depends on the entity's size and the damage dealt squared
                     Vec3d velocity = getCenter(entity.getEntityBoundingBox()).subtract(pos).normalize().scale(damageFactorSq).scale(knockbackFactor).scale(entitySizeFactorSq);
                     entity.addVelocity(velocity.x, velocity.y, velocity.z);
                 }
@@ -185,11 +159,9 @@ public class ModUtils {
         });
     }
 
-
     public static float calculateValueWithPrecentage(float precentageOf, float precentageVal) {
         return (precentageOf * Math.min(precentageVal, 100.0F)) / 100.0F;
     }
-
 
     public static float getPercentageOf(float precentageOf, float precentageVal) {
         return Math.min((precentageVal * 100.0F) / precentageOf, 100.0F);
@@ -209,9 +181,10 @@ public class ModUtils {
     }
 
     private static Vec3d getCenter(AxisAlignedBB box) {
-        return new Vec3d(box.minX + (box.maxX - box.minX) * 0.5D, box.minY + (box.maxY - box.minY) * 0.5D, box.minZ + (box.maxZ - box.minZ) * 0.5D);
+        return new Vec3d(box.minX + (box.maxX - box.minX) * 0.5D, 
+                         box.minY + (box.maxY - box.minY) * 0.5D, 
+                         box.minZ + (box.maxZ - box.minZ) * 0.5D);
     }
-
 
     public static Vec3d getRelativeOffset(EntityLivingBase actor, Vec3d offset) {
         Vec3d look = ModUtils.getVectorForRotation(0, actor.renderYawOffset);
@@ -226,9 +199,4 @@ public class ModUtils {
         float f3 = MathHelper.sin(-pitch * 0.017453292F);
         return new Vec3d(f1 * f2, f3, f * f2);
     }
-
-    // ========== 以下方法已删除（未被使用） ==========
-    // public static boolean isFireproof(Item item) { ... }
-    // public static boolean getblockApplicableToSoulFire(Block block) { ... }
-    // public static boolean isHoeWhitelisted(Block block) { ... }
 }
