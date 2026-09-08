@@ -1,6 +1,5 @@
 package com.unseen.nb.init;
 
-import com.unseen.nb.common.network.ParticleMessage;
 import com.unseen.nb.util.ModReference;
 import net.minecraftforge.fml.common.network.NetworkRegistry;
 import net.minecraftforge.fml.common.network.simpleimpl.SimpleNetworkWrapper;
@@ -12,9 +11,8 @@ public class ModNetworkPackets
 
     public static void registerNetworkPackets()
     {
-        int packetId = 0;
+        // 网络注册暂时留空，为未来可能的网络包预留
         network = NetworkRegistry.INSTANCE.newSimpleChannel(ModReference.MOD_ID);
-        network.registerMessage(ParticleMessage.Handler.class, ParticleMessage.class, packetId++, Side.CLIENT);
+        // 删除：network.registerMessage(ParticleMessage.Handler.class, ParticleMessage.class, packetId++, Side.CLIENT);
     }
-
 }
