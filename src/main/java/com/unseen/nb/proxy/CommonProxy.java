@@ -33,7 +33,6 @@ public class CommonProxy {
     public void spawnParticle(int particleId, double posX, double posY, double posZ, 
                               double speedX, double speedY, double speedZ, int... parameters) {}
 
-    public void spawnSoulParticle(World worldIn, double x, double y, double z, 
-                                  double motX, double motY, double motZ) {
-    }
+    // 删除以下方法：
+    // public void spawnSoulParticle(World worldIn, double x, double y, double z, ...) {}
 }
