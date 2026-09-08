@@ -3,7 +3,7 @@ package com.unseen.nb.common.blocks.base;
 import com.unseen.nb.Main;
 import com.unseen.nb.handler.IHasModel;
 import com.unseen.nb.init.ModBlocks;
-import com.unseen.nb.init.ModItems;
+// 删除 import com.unseen.nb.init.ModItems;
 import net.minecraft.block.BlockRotatedPillar;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
@@ -20,9 +20,9 @@ public class BlockPillarBase extends BlockRotatedPillar implements IHasModel {
         setResistance(resistance);
         setSoundType(soundType);
         this.setDefaultState(this.blockState.getBaseState().withProperty(AXIS, EnumFacing.Axis.Y));
-        // Add both an item as a block and the block itself
+        
         ModBlocks.BLOCKS.add(this);
-        ModItems.ITEMS.add(new ItemBlock(this).setRegistryName(this.getRegistryName()));
+        // 删除这行：ModItems.ITEMS.add(new ItemBlock(this).setRegistryName(this.getRegistryName()));
     }
 
     @Override
