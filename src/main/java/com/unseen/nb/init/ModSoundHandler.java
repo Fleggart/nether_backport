@@ -11,11 +11,11 @@ public class ModSoundHandler {
     public static SoundEvent CHAIN_BREAK;
     public static SoundEvent CHAIN_STEP;
 
-    // ===== 下界金矿石音效 =====
-    public static SoundEvent NETHER_ORE_BREAK;
-    public static SoundEvent NETHER_ORE_STEP;
-    public static SoundEvent NETHER_ORE_PLACE;
-    public static SoundEvent NETHER_ORE_BLOCK_HIT;
+    // ===== 删除下界金矿石音效 =====
+    // public static SoundEvent NETHER_ORE_BREAK;
+    // public static SoundEvent NETHER_ORE_STEP;
+    // public static SoundEvent NETHER_ORE_PLACE;
+    // public static SoundEvent NETHER_ORE_BLOCK_HIT;
 
     // ===== 菌光体音效 =====
     public static SoundEvent SHROOM_LIGHT_BREAK;
@@ -58,11 +58,11 @@ public class ModSoundHandler {
         CHAIN_BREAK = registerSound("chain.break", "block");
         CHAIN_STEP = registerSound("chain.step", "block");
 
-        // ===== 下界金矿石音效 =====
-        NETHER_ORE_BREAK = registerSound("nether_ore.break", "block");
-        NETHER_ORE_STEP = registerSound("nether_ore.step", "block");
-        NETHER_ORE_PLACE = registerSound("nether_ore.place", "block");
-        NETHER_ORE_BLOCK_HIT = registerSound("nether_ore.hit", "block");
+        // ===== 删除下界金矿石音效注册 =====
+        // NETHER_ORE_BREAK = registerSound("nether_ore.break", "block");
+        // NETHER_ORE_STEP = registerSound("nether_ore.step", "block");
+        // NETHER_ORE_PLACE = registerSound("nether_ore.place", "block");
+        // NETHER_ORE_BLOCK_HIT = registerSound("nether_ore.hit", "block");
 
         // ===== 菌光体音效 =====
         SHROOM_LIGHT_BREAK = registerSound("shroom_light.break", "block");
