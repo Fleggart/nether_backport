@@ -1,6 +1,5 @@
 package com.unseen.nb.proxy;
 
-import com.unseen.nb.client.particles.ParticleSoul;
 import com.unseen.nb.client.particles.ParticleSoulFlame;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.particle.IParticleFactory;
@@ -34,25 +33,11 @@ public class ClientProxy extends CommonProxy {
     @SideOnly(Side.CLIENT)
     public static IParticleFactory getFactory(int particleId)
     {
-        switch(particleId)
-        {
-            default:
-            case 0:
-                // 保留 SoulFlame 作为默认
-                return new ParticleSoulFlame.Factory();
-            case 1:
-                return new ParticleSoulFlame.Factory();
-        }
+        // 所有粒子都使用 SoulFlame
+        return new ParticleSoulFlame.Factory();
     }
 
-    public IParticleFactory getParticleFactory() {
-        return new ParticleSoul.Factory();
-    }
-
-    @Override
-    public void spawnSoulParticle(World worldIn, double x, double y, double z, 
-                                  double motX, double motY, double motZ) {
-        if (worldIn == null) worldIn = Minecraft.getMinecraft().world;
-        Minecraft.getMinecraft().effectRenderer.addEffect(getParticleFactory().createParticle(0, worldIn, x, y, z, motX, motY, motZ));
-    }
+    // 删除以下方法：
+    // public IParticleFactory getParticleFactory() { ... }
+    // public void spawnSoulParticle(World worldIn, double x, double y, double z, ...) { ... }
 }
