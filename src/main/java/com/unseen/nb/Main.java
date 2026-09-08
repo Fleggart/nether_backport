@@ -1,7 +1,7 @@
 package com.unseen.nb;
 
 import com.sun.jna.Structure;
-import com.unseen.nb.common.blocks.tileentity.TilePiglinHead;
+// 删除：import com.unseen.nb.common.blocks.tileentity.TilePiglinHead;
 
 // 删除 import com.unseen.nb.common.commands.CommandLocateBastion;
 
@@ -47,7 +47,7 @@ public class Main {
     public void preInit(FMLPreInitializationEvent event) {
         proxy.init();
         ModSoundHandler.registerSounds();
-        GameRegistry.registerTileEntity(TilePiglinHead.class, new ResourceLocation(ModReference.MOD_ID, "piglin_skull"));
+        // 删除：GameRegistry.registerTileEntity(TilePiglinHead.class, new ResourceLocation(ModReference.MOD_ID, "piglin_skull"));
         LootFunctionManager.registerFunction(new LootTableExtendedFunc.Serializer());
     }
 
