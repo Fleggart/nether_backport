@@ -6,6 +6,10 @@ import net.minecraft.world.World;
 
 public class CommonProxy {
 
+    public void init() {
+        // 移除事件注册
+    }
+
     public void registerItemRenderer(Item item, int meta, String id) {}
 
     public void registerItemRenderer(Item item, int meta, String id, ResourceLocation resourceOverride) {}
