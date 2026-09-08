@@ -58,7 +58,7 @@ public class ModBlocks
     public static Block SOUL_FIRE = new BlockSoulFire(CreativeTabs.DECORATIONS, "soul_fire").setLightLevel(0.7F);
     public static Block SOUL_LANTERN = new BlockSoulLantern("soul_lantern", Material.ROCK, 3.5F, 3.5F, NBSoundTypes.LANTERN).setCreativeTab(CreativeTabs.DECORATIONS).setLightLevel(0.7F);
     public static Block SOUL_TORCH = new BlockSoulTorch("soul_torch").setLightLevel(0.7F);
-    public static final Block SOUL_SOIL = new BlockSoulSoil("soul_soil", Material.SAND, 0.5F, 0.5F, NBSoundTypes.SOUL_SOIL).setHarvestInfo("shovel", 0).setCreativeTab(CreativeTabs.BUILDING_BLOCKS);
+    
 
     // ===== 诡异系列 =====
     public static final Block WARPED_STEM = new BlockLogBase("warped_stem",  WOOD_HARDNESS, WOOD_RESISTANCE, NBSoundTypes.STEM_TYPE).setCreativeTab(CreativeTabs.BUILDING_BLOCKS);
