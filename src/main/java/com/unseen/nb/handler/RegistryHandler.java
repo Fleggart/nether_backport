@@ -5,7 +5,7 @@ import com.unseen.nb.init.ModBlocksCompat;
 import com.unseen.nb.init.ModItems;
 import com.unseen.nb.init.ModItemsCompat;
 import com.unseen.nb.util.ModReference;
-import com.unseen.nb.util.mapper.AdvancedStateMap;
+// 删除 import com.unseen.nb.util.mapper.AdvancedStateMap;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDoor;
 import net.minecraft.block.BlockSkull;
@@ -29,17 +29,12 @@ public class RegistryHandler {
 
         private static IForgeRegistry<Item> itemRegistry;
 
-
-
     @SubscribeEvent
     public static void onBlockRegister(RegistryEvent.Register<Block> event)
     {
         event.getRegistry().registerAll(ModBlocks.BLOCKS.toArray(new Block[0]));
-
-
         // blockRegistry = event.getRegistry();
     }
-
 
     @SubscribeEvent
     public static void onItemRegister(RegistryEvent.Register<Item> event)
@@ -47,70 +42,50 @@ public class RegistryHandler {
         itemRegistry = event.getRegistry();
         event.getRegistry().registerAll(ModItems.ITEMS.toArray(new Item[0]));
         // Items.ALTAR = registerItem(new ItemBlock(Items.ALTAR_BLOCK), "altar");
-
        
         { event.getRegistry().registerAll(ModItemsCompat.ITEMS.toArray(new Item[0])); }
     }
 
-
-
-
-        public static <T extends Item> T registerItem(T item, String name) {
-            registerItem(item, new ResourceLocation(ModReference.MOD_ID, name));
-            return item;
-        }
-
-        public static <T extends Item> T registerItem(T item, ResourceLocation name) {
-            itemRegistry.register(item.setRegistryName(name).  setTranslationKey(name.toString().replace(":", ".")));
-            return item;
-        }
-
-        @SubscribeEvent
-        @SideOnly(Side.CLIENT)
-        public static void onModelRegister(ModelRegistryEvent event) {
-
-
-            for (Item item : ModItems.ITEMS) {
-                if (item instanceof IHasModel) {
-                    ((IHasModel) item).registerModels();
-                }
-            }
-
-            for (Block block : ModBlocks.BLOCKS) {
-                if (block instanceof IStateMappedBlock) {
-                    AdvancedStateMap.Builder builder = new AdvancedStateMap.Builder();
-                    ((IStateMappedBlock) block).setStateMapper(builder);
-                    ModelLoader.setCustomStateMapper(block, builder.build());
-                }
-
-                if (block instanceof IHasModel) {
-                    ModelLoader.setCustomStateMapper(ModBlocks.CRIMSON_DOOR, new StateMap.Builder().ignore(BlockDoor.POWERED).build());
-                    ModelLoader.setCustomStateMapper(ModBlocks.WARPED_DOOR, new StateMap.Builder().ignore(BlockDoor.POWERED).build());
-                    // 删除：ModelLoader.setCustomStateMapper(ModBlocks.PIGLIN_HEAD, new StateMap.Builder().ignore(BlockSkull.NODROP).ignore(BlockSkull.FACING).build());
-
-                    ((IHasModel) block).registerModels();
-                }
-            }
-
-
-
-            for (Item item : ModItemsCompat.ITEMS) {
-                if (item instanceof IHasModel) {
-                    ((IHasModel) item).registerModels();
-                }
-            }
-
-        }
-
-    public interface IStateMappedBlock {
-        /**
-         * Sets the statemap
-         *
-         * @param builder
-         */
-        @SideOnly(Side.CLIENT)
-        void setStateMapper(AdvancedStateMap.Builder builder);
+    public static <T extends Item> T registerItem(T item, String name) {
+        registerItem(item, new ResourceLocation(ModReference.MOD_ID, name));
+        return item;
     }
 
+    public static <T extends Item> T registerItem(T item, ResourceLocation name) {
+        itemRegistry.register(item.setRegistryName(name).setTranslationKey(name.toString().replace(":", ".")));
+        return item;
+    }
 
+    @SubscribeEvent
+    @SideOnly(Side.CLIENT)
+    public static void onModelRegister(ModelRegistryEvent event) {
+
+        for (Item item : ModItems.ITEMS) {
+            if (item instanceof IHasModel) {
+                ((IHasModel) item).registerModels();
+            }
+        }
+
+        for (Block block : ModBlocks.BLOCKS) {
+            // 移除 IStateMappedBlock 检查
+            // 直接保留原有的自定义状态映射
+            if (block instanceof IHasModel) {
+                ModelLoader.setCustomStateMapper(ModBlocks.CRIMSON_DOOR, new StateMap.Builder().ignore(BlockDoor.POWERED).build());
+                ModelLoader.setCustomStateMapper(ModBlocks.WARPED_DOOR, new StateMap.Builder().ignore(BlockDoor.POWERED).build());
+                ((IHasModel) block).registerModels();
+            }
+        }
+
+        for (Item item : ModItemsCompat.ITEMS) {
+            if (item instanceof IHasModel) {
+                ((IHasModel) item).registerModels();
+            }
+        }
+    }
+
+    // 删除 IStateMappedBlock 内部接口
+    // public interface IStateMappedBlock {
+    //     @SideOnly(Side.CLIENT)
+    //     void setStateMapper(AdvancedStateMap.Builder builder);
+    // }
 }
