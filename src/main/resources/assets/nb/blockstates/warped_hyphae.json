@@ -1,9 +1,0 @@
-{
-  "variants":
-  {
-    "axis=y": { "model": "nb:warped_hyphae" },
-    "axis=z": { "model": "nb:warped_hyphae", "x": 90 },
-    "axis=x": { "model": "nb:warped_hyphae", "x": 90, "y": 90 },
-    "axis=none": { "model": "nb:warped_hyphae" }
-  }
-}

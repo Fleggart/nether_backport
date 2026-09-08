@@ -1,7 +1,0 @@
-{
-  "variants":
-  {
-    "half=bottom,variant=default": { "model": "nb:polished_black_stone_slab_half_bottom" },
-    "half=top,variant=default": { "model": "nb:polished_black_stone_slab_half_top" }
-  }
-}
