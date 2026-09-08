@@ -1,6 +1,5 @@
 package com.unseen.nb.config;
 
-
 import com.unseen.nb.util.ModReference;
 import net.minecraftforge.common.config.Config;
 
@@ -27,11 +26,10 @@ public class BlocksConfig {
             "minecraft:hay_block",
             "minecraft:nether_wart_block",
             "minecraft:sponge",
-            ModReference.MOD_ID + ":crimson_wart",
-            ModReference.MOD_ID + ":warped_wart",
-            ModReference.MOD_ID + ":shroom_light"
+            // 删除：ModReference.MOD_ID + ":crimson_wart",
+            // 删除：ModReference.MOD_ID + ":warped_wart",
+            // 删除：ModReference.MOD_ID + ":shroom_light"
     };
-
 
     @Config.RequiresMcRestart
     @Config.Comment(value = "Which items will be affected by fire resistance. To add your own do 'modID:itemName', currently not supporting metaData")
@@ -49,7 +47,4 @@ public class BlocksConfig {
     @Config.RequiresMcRestart
     @Config.Comment(value = "Enable this to turn the whitelist for fire resistant items into the opposite. Meaning when set to true, items in the list will act without fire resistance")
     public static boolean fireproofItemBlacklist = false;
-
-
 }
-
