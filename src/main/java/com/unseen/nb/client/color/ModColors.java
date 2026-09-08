@@ -7,8 +7,6 @@ public class ModColors {
 
     public static final Vec3d PURPLE = new Vec3d(0.882, 0, 1);
 
-
-
     public static Vec3d variateColor(Vec3d baseColor, float variance) {
         float f = ModRand.getFloat(variance);
 
