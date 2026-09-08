@@ -1,7 +1,7 @@
 package com.unseen.nb.proxy;
 
-import com.unseen.nb.common.network.ParticleMessage;
-import com.unseen.nb.init.ModNetworkPackets;
+// 删除：import com.unseen.nb.common.network.ParticleMessage;
+// 删除：import com.unseen.nb.init.ModNetworkPackets;
 import net.minecraft.item.Item;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.World;
@@ -23,18 +23,23 @@ public class CommonProxy {
 
     }
 
-    /** Handles spawning of Particles */
-    public void spawnParticle(int particleId, World world, double posX, double posY, double posZ, double speedX, double speedY, double speedZ, int... parameters)
+    /** 处理粒子生成 - 仅客户端 */
+    public void spawnParticle(int particleId, World world, double posX, double posY, double posZ, 
+                              double speedX, double speedY, double speedZ, int... parameters)
     {
+        // 只允许客户端生成粒子
         if (world.isRemote)
-        { spawnParticle(particleId, posX, posY, posZ, speedX, speedY, speedZ, parameters); }
-        else
-        { ModNetworkPackets.network.sendToAllTracking( new ParticleMessage(particleId, posX, posY, posZ, speedX, speedY, speedZ, parameters), new NetworkRegistry.TargetPoint(world.provider.getDimension(), posX, posY, posZ, 0.0D)); }
+        {
+            spawnParticle(particleId, posX, posY, posZ, speedX, speedY, speedZ, parameters);
+        }
+        // 删除服务端的网络发送逻辑
     }
 
-    /** This exists to be overridden in the ClientProxy! */
-    public void spawnParticle(int particleId, double posX, double posY, double posZ, double speedX, double speedY, double speedZ, int... parameters) {}
+    /** 此方法在 ClientProxy 中重写 */
+    public void spawnParticle(int particleId, double posX, double posY, double posZ, 
+                              double speedX, double speedY, double speedZ, int... parameters) {}
 
-    public void spawnSoulParticle(World worldIn, double x, double y, double z, double motX, double motY, double motZ) {
+    public void spawnSoulParticle(World worldIn, double x, double y, double z, 
+                                  double motX, double motY, double motZ) {
     }
 }
