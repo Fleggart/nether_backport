@@ -1,6 +1,5 @@
 package com.unseen.nb.proxy;
 
-
 import com.unseen.nb.client.particles.ParticleInversePortal;
 import com.unseen.nb.client.particles.ParticleObsidianTear;
 import com.unseen.nb.client.particles.ParticleSoul;
@@ -17,9 +16,7 @@ import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-public class ClientProxy extends CommonProxy{
-
-    
+public class ClientProxy extends CommonProxy {
 
     @Override
     public void registerItemRenderer(Item item, int meta, String id)
@@ -29,7 +26,6 @@ public class ClientProxy extends CommonProxy{
     public void registerItemRenderer(Item item, int meta, String id, ResourceLocation resourceOverride)
     { ModelLoader.setCustomModelResourceLocation(item, meta, new ModelResourceLocation(resourceOverride, id)); }
 
-
     @Override
     public void spawnParticle(int particle, double posX, double posY, double posZ, double speedX, double speedY, double speedZ, int... parameters)
     {
@@ -38,10 +34,6 @@ public class ClientProxy extends CommonProxy{
         minecraft.effectRenderer.addEffect(getFactory(particle).createParticle(0, world, posX, posY, posZ, speedX, speedY, speedZ, parameters));
     }
 
-    /**
-     * This is used by the Particle Spawning as an ID system for out Particles.
-     * We do not require Ids for Particles, it's just more convenient for sending over packets!
-     * */
     @SideOnly(Side.CLIENT)
     public static IParticleFactory getFactory(int particleId)
     {
