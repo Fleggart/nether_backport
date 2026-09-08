@@ -2,7 +2,6 @@ package com.unseen.nb.util;
 
 import com.google.common.collect.Lists;
 
-import com.unseen.nb.config.BlocksConfig;
 import com.unseen.nb.config.ModConfig;
 import com.unseen.nb.init.ModBlocks;
 
@@ -259,7 +258,6 @@ public class ModUtils {
         return false;
     }
 }
-
 
 
 
