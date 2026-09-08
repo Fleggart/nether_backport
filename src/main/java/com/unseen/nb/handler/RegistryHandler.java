@@ -86,7 +86,7 @@ public class RegistryHandler {
                 if (block instanceof IHasModel) {
                     ModelLoader.setCustomStateMapper(ModBlocks.CRIMSON_DOOR, new StateMap.Builder().ignore(BlockDoor.POWERED).build());
                     ModelLoader.setCustomStateMapper(ModBlocks.WARPED_DOOR, new StateMap.Builder().ignore(BlockDoor.POWERED).build());
-                    ModelLoader.setCustomStateMapper(ModBlocks.PIGLIN_HEAD, new StateMap.Builder().ignore(BlockSkull.NODROP).ignore(BlockSkull.FACING).build());
+                    // 删除：ModelLoader.setCustomStateMapper(ModBlocks.PIGLIN_HEAD, new StateMap.Builder().ignore(BlockSkull.NODROP).ignore(BlockSkull.FACING).build());
 
                     ((IHasModel) block).registerModels();
                 }
