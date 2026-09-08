@@ -50,7 +50,7 @@ public class ModBlocks
     
     public static Block NETHER_GOLD_ORE = new BlockNetherOre("nether_gold_ore", Material.ROCK, 3.0F, 5.0F, NBSoundTypes.NETHER_ORE).setCreativeTab(CreativeTabs.BUILDING_BLOCKS);
 
-    public static Block PIGLIN_HEAD = new BlockPiglinHead("piglin_head").setCreativeTab(CreativeTabs.DECORATIONS);
+    // 删除：public static Block PIGLIN_HEAD = new BlockPiglinHead("piglin_head").setCreativeTab(CreativeTabs.DECORATIONS);
 
     public static Block QUARTZ_BRICKS = new BlockBase("quartz_bricks", Material.ROCK, STONE_HARDNESS, STONE_RESISTANCE, SoundType.STONE).setCreativeTab(CreativeTabs.BUILDING_BLOCKS);
 
