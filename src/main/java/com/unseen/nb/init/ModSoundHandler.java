@@ -11,18 +11,6 @@ public class ModSoundHandler {
     public static SoundEvent CHAIN_BREAK;
     public static SoundEvent CHAIN_STEP;
 
-    // ===== 删除下界金矿石音效 =====
-    // public static SoundEvent NETHER_ORE_BREAK;
-    // public static SoundEvent NETHER_ORE_STEP;
-    // public static SoundEvent NETHER_ORE_PLACE;
-    // public static SoundEvent NETHER_ORE_BLOCK_HIT;
-
-    // ===== 菌光体音效 =====
-    public static SoundEvent SHROOM_LIGHT_BREAK;
-    public static SoundEvent SHROOM_LIGHT_STEP;
-    public static SoundEvent SHROOM_LIGHT_PlACE;
-    public static SoundEvent SHROOM_LIGHT_HIT;
-
     // ===== 灵魂灯笼音效 =====
     public static SoundEvent SOUL_LANTERN_BREAK;
     public static SoundEvent SOUL_LANTERN_PlACE;
@@ -35,9 +23,6 @@ public class ModSoundHandler {
 
     // ===== 远古残骸音效 =====
     public static SoundEvent ANCIENT_DEBRIS_BREAK;
-
-    // ===== 其他音效 =====
-    // 删除：public static SoundEvent SOUL_FIRE_AMBIENT;
 
     // Biome Ambience
     public static SoundEvent CRIMSON_FOREST_AMBIENT;
@@ -58,18 +43,6 @@ public class ModSoundHandler {
         CHAIN_BREAK = registerSound("chain.break", "block");
         CHAIN_STEP = registerSound("chain.step", "block");
 
-        // ===== 删除下界金矿石音效注册 =====
-        // NETHER_ORE_BREAK = registerSound("nether_ore.break", "block");
-        // NETHER_ORE_STEP = registerSound("nether_ore.step", "block");
-        // NETHER_ORE_PLACE = registerSound("nether_ore.place", "block");
-        // NETHER_ORE_BLOCK_HIT = registerSound("nether_ore.hit", "block");
-
-        // ===== 菌光体音效 =====
-        SHROOM_LIGHT_BREAK = registerSound("shroom_light.break", "block");
-        SHROOM_LIGHT_STEP = registerSound("shroom_light.step", "block");
-        SHROOM_LIGHT_PlACE = registerSound("shroom_light.place", "block");
-        SHROOM_LIGHT_HIT = registerSound("shroom_light.hit", "block");
-
         // ===== 灵魂灯笼音效 =====
         SOUL_LANTERN_BREAK = registerSound("soul_lantern.break", "block");
         SOUL_LANTERN_PlACE = registerSound("soul_lantern.place", "block");
@@ -82,9 +55,6 @@ public class ModSoundHandler {
 
         // ===== 远古残骸音效 =====
         ANCIENT_DEBRIS_BREAK = registerSound("debris.break", "block");
-
-        // ===== 其他音效 =====
-        // 删除：SOUL_FIRE_AMBIENT = registerSound("soul_fire.ambient", "block");
         
         // Biome Ambience
         CRIMSON_FOREST_AMBIENT = registerSound("crimson_forest.ambience", "ambient");
