@@ -1,11 +1,7 @@
 package com.unseen.nb.util;
 
 import com.google.common.collect.Lists;
-
-import com.unseen.nb.config.BlocksConfig;
 import com.unseen.nb.config.ModConfig;
-import com.unseen.nb.init.ModBlocks;
-
 import net.minecraft.block.*;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.enchantment.EnchantmentHelper;
@@ -231,35 +227,8 @@ public class ModUtils {
         return new Vec3d(f1 * f2, f3, f * f2);
     }
 
-
-    public static boolean isFireproof(Item item) {
-        for (String itemName : BlocksConfig.fireproofItemList) {
-            if (ForgeRegistries.ITEMS.getValue(new ResourceLocation(itemName)) == item) {
-                return !BlocksConfig.fireproofItemBlacklist;
-            }
-        }
-        return BlocksConfig.fireproofItemBlacklist;
-    }
-
-    public static boolean getblockApplicableToSoulFire(Block block) {
-        for (String blockName : BlocksConfig.soulBlocks) {
-            if (ForgeRegistries.BLOCKS.getValue(new ResourceLocation(blockName)) == block) {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    public static boolean isHoeWhitelisted(Block block) {
-        for (String blockName : BlocksConfig.hoeWhitelistedBlocks) {
-            if (ForgeRegistries.BLOCKS.getValue(new ResourceLocation(blockName)) == block || block instanceof BlockLeaves) {
-                return true;
-            }
-        }
-        return false;
-    }
+    // ========== 以下方法已删除（未被使用） ==========
+    // public static boolean isFireproof(Item item) { ... }
+    // public static boolean getblockApplicableToSoulFire(Block block) { ... }
+    // public static boolean isHoeWhitelisted(Block block) { ... }
 }
-
-
-
-
