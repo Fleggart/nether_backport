@@ -37,7 +37,7 @@ public class ModSoundHandler {
     public static SoundEvent ANCIENT_DEBRIS_BREAK;
 
     // ===== 其他音效 =====
-    public static SoundEvent SOUL_FIRE_AMBIENT;
+    // 删除：public static SoundEvent SOUL_FIRE_AMBIENT;
 
     // Biome Ambience
     public static SoundEvent CRIMSON_FOREST_AMBIENT;
@@ -84,7 +84,7 @@ public class ModSoundHandler {
         ANCIENT_DEBRIS_BREAK = registerSound("debris.break", "block");
 
         // ===== 其他音效 =====
-        SOUL_FIRE_AMBIENT = registerSound("soul_fire.ambient", "block");
+        // 删除：SOUL_FIRE_AMBIENT = registerSound("soul_fire.ambient", "block");
         
         // Biome Ambience
         CRIMSON_FOREST_AMBIENT = registerSound("crimson_forest.ambience", "ambient");
