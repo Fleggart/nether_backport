@@ -3,7 +3,6 @@ package com.unseen.nb.common.blocks;
 import com.unseen.nb.Main;
 import com.unseen.nb.handler.IHasModel;
 import com.unseen.nb.init.ModBlocks;
-import com.unseen.nb.init.ModBlocksCompat;
 import com.unseen.nb.init.ModItems;
 import net.minecraft.block.BlockTorch;
 import net.minecraft.block.SoundType;
@@ -30,7 +29,6 @@ public class BlockSoulTorch extends BlockTorch implements IHasModel {
         this.setTranslationKey(name);
         this.setRegistryName(name);
 
-        // Add both an item as a block and the block itself
         ModBlocks.BLOCKS.add(this);
         ModItems.ITEMS.add(new ItemBlock(this).setRegistryName(this.getRegistryName()));
     }
@@ -48,11 +46,13 @@ public class BlockSoulTorch extends BlockTorch implements IHasModel {
         {
             EnumFacing enumfacing1 = enumfacing.getOpposite();
             worldIn.spawnParticle(EnumParticleTypes.SMOKE_NORMAL, d0 + 0.27D * (double)enumfacing1.getXOffset(), d1 + 0.22D, d2 + 0.27D * (double)enumfacing1.getZOffset(), 0.0D, 0.0D, 0.0D);
+            // 使用粒子ID 1 (SoulFlame)
             Main.proxy.spawnParticle(1, d0 + 0.27D * (double)enumfacing1.getXOffset(), d1 + 0.22D, d2 + 0.27D * (double)enumfacing1.getZOffset(), 0.0D, 0.0D, 0.0D);
         }
         else
         {
             worldIn.spawnParticle(EnumParticleTypes.SMOKE_NORMAL, d0, d1, d2, 0.0D, 0.0D, 0.0D);
+            // 使用粒子ID 1 (SoulFlame)
             Main.proxy.spawnParticle(1, d0, d1, d2, 0.0D, 0.0D, 0.0D);
         }
     }
