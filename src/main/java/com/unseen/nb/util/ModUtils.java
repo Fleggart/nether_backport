@@ -4,7 +4,6 @@ import com.google.common.collect.Lists;
 
 import com.unseen.nb.config.BlocksConfig;
 import com.unseen.nb.config.ModConfig;
-import com.unseen.nb.config.NBEntitiesConfig;
 import com.unseen.nb.init.ModBlocks;
 
 import net.minecraft.block.*;
@@ -253,15 +252,6 @@ public class ModUtils {
             }
         }
         return false;
-    }
-
-    public static boolean getItemsForBarter(Item item) {
-        for(String itemName : NBEntitiesConfig.itemsForBarter) {
-            if(ForgeRegistries.ITEMS.getValue(new ResourceLocation(itemName)) == item) {
-                return true;
-            }
-        }
-         return false;
     }
 
     public static boolean isHoeWhitelisted(Block block) {
