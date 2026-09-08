@@ -5,7 +5,6 @@ import com.unseen.nb.init.ModBlocksCompat;
 import com.unseen.nb.init.ModItems;
 import com.unseen.nb.init.ModItemsCompat;
 import com.unseen.nb.util.ModReference;
-// 删除 import com.unseen.nb.util.mapper.AdvancedStateMap;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDoor;
 import net.minecraft.block.BlockSkull;
@@ -27,7 +26,7 @@ import static com.unseen.nb.init.ModBlocks.*;
 @Mod.EventBusSubscriber
 public class RegistryHandler {
 
-        private static IForgeRegistry<Item> itemRegistry;
+    private static IForgeRegistry<Item> itemRegistry;
 
     @SubscribeEvent
     public static void onBlockRegister(RegistryEvent.Register<Block> event)
@@ -67,11 +66,11 @@ public class RegistryHandler {
         }
 
         for (Block block : ModBlocks.BLOCKS) {
-            // 移除 IStateMappedBlock 检查
-            // 直接保留原有的自定义状态映射
+            // 移除门的状态映射（因为绯红和诡异门已被删除）
+            // ModelLoader.setCustomStateMapper(ModBlocks.CRIMSON_DOOR, new StateMap.Builder().ignore(BlockDoor.POWERED).build());
+            // ModelLoader.setCustomStateMapper(ModBlocks.WARPED_DOOR, new StateMap.Builder().ignore(BlockDoor.POWERED).build());
+            
             if (block instanceof IHasModel) {
-                ModelLoader.setCustomStateMapper(ModBlocks.CRIMSON_DOOR, new StateMap.Builder().ignore(BlockDoor.POWERED).build());
-                ModelLoader.setCustomStateMapper(ModBlocks.WARPED_DOOR, new StateMap.Builder().ignore(BlockDoor.POWERED).build());
                 ((IHasModel) block).registerModels();
             }
         }
@@ -82,10 +81,4 @@ public class RegistryHandler {
             }
         }
     }
-
-    // 删除 IStateMappedBlock 内部接口
-    // public interface IStateMappedBlock {
-    //     @SideOnly(Side.CLIENT)
-    //     void setStateMapper(AdvancedStateMap.Builder builder);
-    // }
 }
