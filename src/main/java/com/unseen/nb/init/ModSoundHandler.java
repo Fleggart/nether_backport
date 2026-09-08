@@ -69,55 +69,7 @@ public class ModSoundHandler {
     public static SoundEvent STEM_BREAK;
     public static SoundEvent STEM_STEP;
 
-    //ENTITIES
-    public static SoundEvent PIGLIN_IDLE;
-
-    public static SoundEvent PIGLIN_HURT;
-
-    public static SoundEvent PIGLIN_STEP;
-
-    public static SoundEvent PIGLIN_ADMIRE;
-
-    public static SoundEvent PIGLIN_DEATH;
-
-    public static SoundEvent PIGLIN_JEALOUS;
-    public static SoundEvent PIGLIN_ANGRY;
-    public static SoundEvent PIGLIN_CELEBRATE;
-    public static SoundEvent PIGLIN_RETREAT;
-    public static SoundEvent PIGLIN_CONVERTED;
-
-    //Strider
-    public static SoundEvent STRIDER_WARBLE;
-    public static SoundEvent STRIDER_RETREAT;
-    public static SoundEvent STRIDER_STEP_LAVA;
-    public static SoundEvent STRIDER_STEP;
-    public static SoundEvent STRIDER_HURT;
-    public static SoundEvent STRIDER_CHIRP;
-    public static SoundEvent STRIDER_DEATH;
-
-    //Piglin Brute
-    public static SoundEvent BRUTE_HURT;
-    public static SoundEvent BRUTE_DEATH;
-    public static SoundEvent BRUTE_IDLE;
-    public static SoundEvent BRUTE_STEP;
-    public static SoundEvent BRUTE_ANGRY;
-
-    //Piglin Zombie
-    public static SoundEvent ZPIG_IDLE;
-    public static SoundEvent ZPIG_HURT;
-    public static SoundEvent ZPIG_DEATH;
-    public static SoundEvent ZPIG_ANGRY;
-
-    //Hoglin
-    public static SoundEvent HOGLIN_STEP;
-    public static SoundEvent HOGLIN_HURT;
-    public static SoundEvent HOGLIN_DEATH;
-    public static SoundEvent HOGLIN_RETREAT;
-    public static SoundEvent HOGLIN_ANGRY;
-    public static SoundEvent HOGLIN_IDLE;
-    public static SoundEvent HOGLIN_CONVERTED;
-    public static SoundEvent HOGLIN_ATTACK;
-
+  
     //Biome Ambience
     public static SoundEvent CRIMSON_FOREST_AMBIENT;
     public static SoundEvent CRIMSON_FOREST_AMBIENT_CONSTANT;
@@ -192,45 +144,9 @@ public class ModSoundHandler {
     STEM_BREAK = registerSound("stem.break", "block");
     STEM_STEP = registerSound("stem.step", "block");
 
-    //ENTITIES
-        PIGLIN_STEP = registerSound("piglin.step", "entity");
-        PIGLIN_HURT = registerSound("piglin.hurt", "entity");
-        PIGLIN_IDLE = registerSound("piglin.idle", "entity");
-        PIGLIN_DEATH = registerSound("piglin.death", "entity");
-        PIGLIN_ADMIRE = registerSound("piglin.admire", "entity");
-        PIGLIN_JEALOUS = registerSound("piglin.jealous", "entity");
-        PIGLIN_ANGRY = registerSound("piglin.angry", "entity");
-        PIGLIN_CELEBRATE = registerSound("piglin.celebrate", "entity");
-        PIGLIN_RETREAT = registerSound("piglin.retreat", "entity");
-        PIGLIN_CONVERTED = registerSound("piglin.converted", "entity");
-     //STRIDER
-     STRIDER_CHIRP = registerSound("strider.chirp", "entity"); //DONE
-     STRIDER_DEATH = registerSound("strider.death", "entity"); //DONE
-     STRIDER_HURT = registerSound("strider.hurt", "entity"); //DONE
-     STRIDER_RETREAT = registerSound("strider.retreat", "entity"); //DONE
-     STRIDER_STEP = registerSound("strider.step", "entity"); //DONE
-     STRIDER_STEP_LAVA = registerSound("strider.step_lava", "entity"); //DONE
-     STRIDER_WARBLE = registerSound("strider.warble", "entity"); //DONE
-        //Piglin Brute
-        BRUTE_DEATH = registerSound("brute.death", "entity");
-        BRUTE_HURT = registerSound("brute.hurt", "entity");
-        BRUTE_IDLE = registerSound("brute.idle", "entity");
-        BRUTE_STEP = registerSound("brute.step", "entity");
-        BRUTE_ANGRY = registerSound("brute.angry", "entity");
-        //Zombie Piglin
-        ZPIG_ANGRY = registerSound("zpig.angry", "entity");
-        ZPIG_DEATH = registerSound("zpig.death", "entity");
-        ZPIG_HURT = registerSound("zpig.hurt", "entity");
-        ZPIG_IDLE = registerSound("zpig.idle", "entity");
-        //Hoglin
-        HOGLIN_ANGRY = registerSound("hoglin.angry", "entity"); //DONE
-        HOGLIN_HURT = registerSound("hoglin.hurt", "entity"); //DONE
-        HOGLIN_IDLE = registerSound("hoglin.idle", "entity"); //DONE
-        HOGLIN_DEATH = registerSound("hoglin.death", "entity"); //DONE
-        HOGLIN_STEP = registerSound("hoglin.step", "entity"); //DONE
-        HOGLIN_RETREAT = registerSound("hoglin.retreat", "entity"); //DONE
-        HOGLIN_ATTACK = registerSound("hoglin.attack", "entity"); //DONE
-        HOGLIN_CONVERTED = registerSound("hoglin.converted", "entity"); //DONE
+
+
+l
         
         //Biome Ambience
         CRIMSON_FOREST_AMBIENT = registerSound("crimson_forest.ambience", "ambient");
