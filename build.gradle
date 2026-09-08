@@ -122,17 +122,6 @@ dependencies {
     //Minecraft
     minecraft("net.minecraftforge:forge:${project.minecraft_version}-${project.forge_version}")
 
-    //Nether API
-    implementation(fg.deobf('com.github.jbredwards:nether-API:f2f48d7b8b'))
-    //Crossbows
-    implementation "curse.maven:crossbows-973881:5108261"
-    //Spartan Weaponry
-    implementation fg.deobf("curse.maven:spartan-weaponry-278141:5564836")
-    //FutureMC
-    implementation fg.deobf("curse.maven:futuremc-310059:5013081")
-    //Shaded `shade`
-    //shade("io.github.kostaskougios:cloning:${project.cloning_version}")
-
     //Implemented `implementation`
     implementation("io.github.kostaskougios:cloning:${project.cloning_version}")
 
