@@ -1,11 +1,8 @@
 package com.unseen.nb.proxy;
 
-import com.unseen.nb.client.particles.ParticleInversePortal;
-import com.unseen.nb.client.particles.ParticleObsidianTear;
 import com.unseen.nb.client.particles.ParticleSoul;
 import com.unseen.nb.client.particles.ParticleSoulFlame;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.entity.EntityPlayerSP;
 import net.minecraft.client.particle.IParticleFactory;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
@@ -41,13 +38,10 @@ public class ClientProxy extends CommonProxy {
         {
             default:
             case 0:
-                // 注意：ParticleObsidianTear 被 Crying Obsidian 使用，如果 Crying Obsidian 被删除，这个粒子可能不再需要
-                // 建议保留或根据实际使用情况决定
-                return new ParticleObsidianTear.Factory();
+                // 保留 SoulFlame 作为默认
+                return new ParticleSoulFlame.Factory();
             case 1:
                 return new ParticleSoulFlame.Factory();
-            case 2:
-                return new ParticleInversePortal.Factory();
         }
     }
 
