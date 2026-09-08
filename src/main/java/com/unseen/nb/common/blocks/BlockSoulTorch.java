@@ -3,7 +3,7 @@ package com.unseen.nb.common.blocks;
 import com.unseen.nb.Main;
 import com.unseen.nb.handler.IHasModel;
 import com.unseen.nb.init.ModBlocks;
-import com.unseen.nb.init.ModItems;
+// 删除这一行：import com.unseen.nb.init.ModItems;
 import net.minecraft.block.BlockTorch;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.state.IBlockState;
@@ -30,7 +30,8 @@ public class BlockSoulTorch extends BlockTorch implements IHasModel {
         this.setRegistryName(name);
 
         ModBlocks.BLOCKS.add(this);
-        ModItems.ITEMS.add(new ItemBlock(this).setRegistryName(this.getRegistryName()));
+        // 删除这行：ModItems.ITEMS.add(new ItemBlock(this).setRegistryName(this.getRegistryName()));
+        // ItemBlock 现在单独注册
     }
 
     @Override
