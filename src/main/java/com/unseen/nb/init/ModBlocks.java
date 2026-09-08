@@ -25,11 +25,13 @@ public class ModBlocks
     public static final float OBSIDIAN_RESISTANCE = 2000;
     public static final List<Block> BLOCKS = new ArrayList<Block>();
 
+    // ===== 锁链（保留） =====
+    public static Block CHAINS = new BlockChainNew("chain_block", Material.ROCK, STONE_HARDNESS, STONE_RESISTANCE, NBSoundTypes.CHAIN).setCreativeTab(CreativeTabs.DECORATIONS);
+
     // ===== 删除所有玄武岩系列 =====
     // public static final Block BASALT = new BlockPillarBase("basalt", Material.ROCK, BASALT_HARDNESS, BASALT_RESISTANCE, NBSoundTypes.BASALT).setCreativeTab(CreativeTabs.BUILDING_BLOCKS);
     // public static final Block POLISHED_BASALT = new BlockPillarBase("polished_basalt", Material.ROCK, BASALT_HARDNESS, BASALT_RESISTANCE, NBSoundTypes.BASALT).setCreativeTab(CreativeTabs.BUILDING_BLOCKS);
     // public static final Block SMOOTH_BASALT = new BlockBase("smooth_basalt", Material.ROCK, BASALT_HARDNESS, BASALT_RESISTANCE, NBSoundTypes.BASALT).setCreativeTab(CreativeTabs.BUILDING_BLOCKS);
-    // public static Block CHAINS = new BlockChainNew("chain_block", Material.ROCK, STONE_HARDNESS, STONE_RESISTANCE, NBSoundTypes.CHAIN).setCreativeTab(CreativeTabs.DECORATIONS);
 
     // ===== 删除所有绯红系列 =====
     // public static final Block CRIMSON_STEM = new BlockLogBase("crimson_stem", WOOD_HARDNESS, WOOD_RESISTANCE, NBSoundTypes.STEM_TYPE).setCreativeTab(CreativeTabs.BUILDING_BLOCKS);
