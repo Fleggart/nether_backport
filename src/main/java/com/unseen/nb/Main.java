@@ -9,7 +9,7 @@ import com.unseen.nb.init.*;
 import com.unseen.nb.proxy.CommonProxy;
 import com.unseen.nb.util.LootTableExtendedFunc;
 import com.unseen.nb.util.ModReference;
-import com.unseen.nb.util.NBLogger;
+
 
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.util.ResourceLocation;
@@ -39,10 +39,6 @@ public class Main {
     @Mod.Instance
     public static Main instance;
 
-    public Main() {
-        NBLogger.clearLog();
-    }
-
     @EventHandler
     public void preInit(FMLPreInitializationEvent event) {
         proxy.init();
@@ -61,14 +57,6 @@ public class Main {
     public void postInit(FMLPostInitializationEvent e) {
         // 留空
     }
-
-    // 删除整个 serverLoad 方法
-    /*
-    @Mod.EventHandler
-    public void serverLoad(FMLServerStartingEvent event) {
-        event.registerServerCommand(new CommandLocateBastion());
-    }
-    */
 
     public static <MSG extends IMessage> void sendMSGToAll(MSG message) {
         // 留空
