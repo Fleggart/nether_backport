@@ -2,18 +2,15 @@ package com.unseen.nb;
 
 import com.sun.jna.Structure;
 // 删除：import com.unseen.nb.common.blocks.tileentity.TilePiglinHead;
-
 // 删除 import com.unseen.nb.common.commands.CommandLocateBastion;
-
 import com.unseen.nb.init.*;
 import com.unseen.nb.proxy.CommonProxy;
-import com.unseen.nb.util.LootTableExtendedFunc;
+// 删除 import com.unseen.nb.util.LootTableExtendedFunc;
 import com.unseen.nb.util.ModReference;
-
 
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.util.ResourceLocation;
-import net.minecraft.world.storage.loot.functions.LootFunctionManager;
+// 删除 import net.minecraft.world.storage.loot.functions.LootFunctionManager;
 import net.minecraftforge.common.capabilities.CapabilityManager;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
@@ -44,7 +41,7 @@ public class Main {
         proxy.init();
         ModSoundHandler.registerSounds();
         // 删除：GameRegistry.registerTileEntity(TilePiglinHead.class, new ResourceLocation(ModReference.MOD_ID, "piglin_skull"));
-        LootFunctionManager.registerFunction(new LootTableExtendedFunc.Serializer());
+        // 删除：LootFunctionManager.registerFunction(new LootTableExtendedFunc.Serializer());
     }
 
     @EventHandler
