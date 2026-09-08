@@ -4,7 +4,6 @@ import com.unseen.nb.client.particles.ParticleInversePortal;
 import com.unseen.nb.client.particles.ParticleObsidianTear;
 import com.unseen.nb.client.particles.ParticleSoul;
 import com.unseen.nb.client.particles.ParticleSoulFlame;
-
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.entity.EntityPlayerSP;
 import net.minecraft.client.particle.IParticleFactory;
@@ -27,7 +26,8 @@ public class ClientProxy extends CommonProxy {
     { ModelLoader.setCustomModelResourceLocation(item, meta, new ModelResourceLocation(resourceOverride, id)); }
 
     @Override
-    public void spawnParticle(int particle, double posX, double posY, double posZ, double speedX, double speedY, double speedZ, int... parameters)
+    public void spawnParticle(int particle, double posX, double posY, double posZ, 
+                              double speedX, double speedY, double speedZ, int... parameters)
     {
         Minecraft minecraft = Minecraft.getMinecraft();
         World world = minecraft.world;
@@ -41,6 +41,8 @@ public class ClientProxy extends CommonProxy {
         {
             default:
             case 0:
+                // 注意：ParticleObsidianTear 被 Crying Obsidian 使用，如果 Crying Obsidian 被删除，这个粒子可能不再需要
+                // 建议保留或根据实际使用情况决定
                 return new ParticleObsidianTear.Factory();
             case 1:
                 return new ParticleSoulFlame.Factory();
@@ -54,7 +56,8 @@ public class ClientProxy extends CommonProxy {
     }
 
     @Override
-    public void spawnSoulParticle(World worldIn, double x, double y, double z, double motX, double motY, double motZ) {
+    public void spawnSoulParticle(World worldIn, double x, double y, double z, 
+                                  double motX, double motY, double motZ) {
         if (worldIn == null) worldIn = Minecraft.getMinecraft().world;
         Minecraft.getMinecraft().effectRenderer.addEffect(getParticleFactory().createParticle(0, worldIn, x, y, z, motX, motY, motZ));
     }
