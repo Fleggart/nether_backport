@@ -1,7 +1,0 @@
-{
-  "parent": "nb:base/chain",
-  "textures": {
-    "all": "nb:blocks/chain",
-    "particle": "nb:blocks/chain_item"
-  }
-}

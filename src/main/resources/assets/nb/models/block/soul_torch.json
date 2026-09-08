@@ -1,6 +1,0 @@
-{
-  "parent": "block/torch",
-  "textures": {
-    "torch": "nb:blocks/soul_torch"
-  }
-}

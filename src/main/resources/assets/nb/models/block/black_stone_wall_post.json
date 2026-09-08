@@ -1,6 +1,0 @@
-{
-  "parent": "block/wall_post",
-  "textures": {
-    "wall": "nb:blocks/black_stone_top"
-  }
-}

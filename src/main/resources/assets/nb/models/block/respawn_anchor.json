@@ -1,9 +1,0 @@
-{
-  "parent": "block/cube_bottom_top",
-  "textures":
-  {
-    "top": "nb:blocks/respawn_anchor_top_off",
-    "side": "nb:blocks/respawn_anchor_side0",
-    "bottom": "nb:blocks/cry_obi"
-  }
-}
