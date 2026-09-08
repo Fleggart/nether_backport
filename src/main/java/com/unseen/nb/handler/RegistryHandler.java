@@ -1,7 +1,7 @@
 package com.unseen.nb.handler;
 
 import com.unseen.nb.init.ModBlocks;
-// 删除 import com.unseen.nb.init.ModItems;
+import com.unseen.nb.init.ModItems;
 import com.unseen.nb.util.ModReference;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
@@ -20,15 +20,16 @@ public class RegistryHandler {
     private static IForgeRegistry<Item> itemRegistry;
 
     @SubscribeEvent
-    public static void onBlockRegister(RegistryEvent.Register<Block> event) {
+    public static void onBlockRegister(RegistryEvent.Register<Block> event)
+    {
         event.getRegistry().registerAll(ModBlocks.BLOCKS.toArray(new Block[0]));
     }
 
     @SubscribeEvent
-    public static void onItemRegister(RegistryEvent.Register<Item> event) {
+    public static void onItemRegister(RegistryEvent.Register<Item> event)
+    {
         itemRegistry = event.getRegistry();
-        // 删除这行：event.getRegistry().registerAll(ModItems.ITEMS.toArray(new Item[0]));
-        // 现在物品需要单独注册
+        event.getRegistry().registerAll(ModItems.ITEMS.toArray(new Item[0]));
     }
 
     public static <T extends Item> T registerItem(T item, String name) {
@@ -44,11 +45,13 @@ public class RegistryHandler {
     @SubscribeEvent
     @SideOnly(Side.CLIENT)
     public static void onModelRegister(ModelRegistryEvent event) {
-        // 删除对 ModItems.ITEMS 的遍历
-        // 现在需要单独为每个物品注册模型
-        // 或者遍历 ModBlocks 中的方块来注册模型
-        
-        // 只处理方块
+
+        for (Item item : ModItems.ITEMS) {
+            if (item instanceof IHasModel) {
+                ((IHasModel) item).registerModels();
+            }
+        }
+
         for (Block block : ModBlocks.BLOCKS) {
             if (block instanceof IHasModel) {
                 ((IHasModel) block).registerModels();
